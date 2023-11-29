@@ -27,6 +27,6 @@ const googleSchema = new mongoose.Schema({
     }
 });
 
-const googleuser = mongoose.model('googleuser', googleSchema);
-console.log(googleuser)
-module.exports = googleuser;
+const googledata = mongoose.model('googledata', googleSchema);
+// console.log(googledata)
+module.exports = googledata;

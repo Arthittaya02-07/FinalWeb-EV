@@ -1,6 +1,6 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
-const googleuser = require('../models/googleuser');
+const googledata = require('../models/DataGoogle');
 
 module.exports = function (passport) {
   passport.use(
@@ -8,7 +8,7 @@ module.exports = function (passport) {
       {
         clientID: '353146405450-2jvlpldc6vd5sm6mv34ik972cb155e3v.apps.googleusercontent.com',
         clientSecret: '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',
-        callbackURL: '/auth/google/callback',
+        callbackURL: 'http://localhost:4000/auth/google/callback',
       },
       async (accessToken, refreshToken, profile, done) => {
         const newUser = {
