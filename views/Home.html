@@ -39,24 +39,6 @@
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-      
-      .backgroundAnimation {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .backgroundAnimation img {
-        position: absolute;
-        top: 0; /* Set top to 0 initially */
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 100%;
-        width: 100vw;
-        height: auto;
-        object-fit: cover;
-      }
 
     </style>
   </head>
@@ -339,7 +321,9 @@
     </header>
 
     <div class="container-fluid backgroundAnimation">
+      
       <img src="./Images/homepara/Home_0000_moon.png" id="moon">
+      <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;">WELCOME, USER</h1>
      <img src="./Images/homepara/Home_0009_star.png" id="star">
      <img src="./Images/homepara/Home_0008_cloud.png" id="cloud">
      <img src="./Images/homepara/Home_0006_river.png" id="river">
@@ -348,12 +332,17 @@
         src="./Images/homepara/Home_0007_mountain.png"
         class="img-fluid"
       />
-    <h1 id="welcome" style="color: #763DF2; font-weight: bold;">WELCOME, USER</h1>
+    
      <img src="./Images/homepara/Home_0005_city2.png" id="city2">
      <img src="./Images/homepara/Home_0004_city1.png" id="city1">
      <img src="./Images/homepara/Home_0003_road.png" id="road">
      <img src="./Images/homepara/Home_0002_car.png" id="car" >
      <img src="./Images/homepara/Home_0001_rock.png" id="rock">
+     
+    </div>
+
+    <div class="container-fluid content1" style="background-color: black; height: 500px;">
+
     </div>
 
     <div class="go-to-top">
@@ -481,14 +470,18 @@
       AOS.init();
     </script>
  <script>
-  let mountain = document.getElementById("mountain");
   let moon = document.getElementById("moon")
+  let city1 = document.getElementById("city1")
+  let city2 = document.getElementById("city2")
+  let car = document.getElementById("car")
+  let welcome = document.getElementById("welcome")
   window.addEventListener("scroll", function () {
     let value = window.scrollY;
     city1.style.marginLeft = value * 0.25 + "px";
     city2.style.marginLeft = value * -0.5 + 'px';
     moon.style.marginLeft = value * 1.5 + "px";
     car.style.marginLeft = value * -1 + "px";
+    welcome.style.marginTop = value * 0.5 + "px";
   });
 </script>
   </body>
