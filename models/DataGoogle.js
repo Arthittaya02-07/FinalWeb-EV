@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const googleSchema = new mongoose.Schema({
+const googleSchema = new Schema({
     googleID: {
         type: String,
         required: true
@@ -27,6 +27,5 @@ const googleSchema = new mongoose.Schema({
     }
 });
 
-const googleuser = mongoose.model('googleuser', googleSchema);
-console.log(googleuser)
-module.exports = googleuser;
+const datagoogle = mongoose.model('datagoogle', googleSchema)
+module.exports = datagoogle
