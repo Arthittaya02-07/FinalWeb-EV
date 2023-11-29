@@ -2,7 +2,7 @@ const express = require ('express')
 const app = express()
 const ejs = require('ejs')
 const mongoose = require('mongoose')
-const expressSession = require('express-session')
+const expressSession = require('express-session') 
 const flash = require('connect-flash')
 const passport = require('passport')
 // const fetch = require('node-fetch')
@@ -42,8 +42,6 @@ const authgoogle = require('./auth')
 //passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 app.use(express.static('public'))
 app.use(express.json())
