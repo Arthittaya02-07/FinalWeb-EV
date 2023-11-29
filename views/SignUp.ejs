@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up -EV Charge Hub</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+
+    <link href="/css/styleLogSign.css" rel="stylesheet" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <div class="d-flex flex-column justify-content-center">
+      <!-- Full Desktop -->
+      <header class="position-relative d-none d-sm-block m-2">
+        <!-- <div class="container"> -->
+        <div class="position-absolute ps-4" style="top: 20px">
+          <a class="navbar-brand font-weight-bold" href="/">
+            <img
+              src="/Images/logo.png"
+              class="img-fluid"
+              style="max-width: 120px; max-height: 60px"
+            />
+          </a>
+        </div>
+      </header>
+
+      <!-- Small Desktop -->
+      <header class="position-relative d-block d-sm-none">
+        <div class="d-flex justify-content-between pt-3 pl-3 pr-3 p-4">
+          <div class="">
+            <a class="navbar-brand font-weight-bold" href="/">
+              <img
+                src="/Images/logo.png"
+                class="img-fluid"
+                style="max-width: 120px; max-height: 60px"
+              />
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- sign up -->
+      <div class="container-fluid h-100 mt-5 mb-3">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          
+          <div class="col-lg-10 col-xl-9">
+            <div class="card mt-4">
+              <div class="card-body p-md-4" >
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-6 order-2 order-lg-1">
+                     <form action="/user/SignUp" method="POST">
+                        <h1 style="font-weight: bolder; margin-bottom: 35px; color: #1E2D59;">SIGN UP</h1>
+
+                        <% if (errors != null && errors.length > 0 ) { %>
+                          <% for(let i = 0; i< errors.length; i++) { %>
+                              <p class="alert alert-danger">
+                                  <%= errors[i] %>
+                              </p>
+                          <%  } %>
+                      <%  } %>
+                        
+
+                          <div class="row">
+                            <div class="col-md-6 mb-1">
+                              <label class="form-label" for="firstName"
+                              >First Name</label
+                            >
+                              <div class="form-outline">
+                                <input
+                                  type="text"
+                                  id="firstName"
+                                  name="name"
+                                  value="<%= name %>"
+                                  class="form-control form-control-md"
+                                  placeholder="Your first name"
+                                />
+                               
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-1">
+                              <div class="form-outline">
+                                <label class="form-label" for="lastName"
+                                >Last Name</label
+                              >
+                                <input
+                                  type="text"
+                                  name="surname"
+                                  value="<%= surname %>"
+                                  id="lastName"
+                                  class="form-control form-control-md"
+                                  placeholder="Your last name"
+                                />
+                              
+                              </div>
+                            </div>
+                          </div>
+        
+                          <div class="row">
+                            <div class="col-md-12 mb-1 pb-2">
+                              <div class="form-outline">
+                                <label class="form-label" for="emailAddress"
+                                >Email</label
+                              >
+                                <input
+                                  type="email"
+                                  name="email"
+                                  value="<%= email %>"
+                                  id="emailAddress"
+                                  class="form-control form-control-md"
+                                  placeholder="example@gmail.com"
+                                />
+                              
+                              </div>
+                            </div>
+                          </div>
+        
+                          <div class="row">
+                            <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline">
+                                <label class="form-label" for="password"
+                                >Password</label
+                              >
+                                <input
+                                  type="password"
+                                  name="password"
+                                  value="<%= password %>"
+                                  id="password"
+                                  class="form-control form-control-md"
+                                  placeholder="Enter password"
+                                />
+                               
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline">
+                                <label class="form-label" for="confirmPassword"
+                                >Repeat Password</label
+                              >
+                                <input
+                                  type="password"
+                                  id="confirmPassword"
+                                  name="repassword"
+                                  value="<%= repassword %>"
+                                  class="form-control form-control-md"
+                                  placeholder="Enter Repassword"
+                                />
+                             
+                              </div>
+                            </div>
+                          </div>
+        
+                          <div class="row">
+                            <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline datepicker w-100">
+                                <label for="birthdayDate" class="form-label"
+                                >Birthday</label
+                              >
+                                <input
+                                  type="date"
+                                  name="birthday"
+                                  value="<%= birthday %>"
+                                  class="form-control form-control-md"
+                                  id="birthdayDate"
+                                />
+                               
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline">
+                                <label class="form-label" for="phoneNumber"
+                                  >Phone Number</label
+                                >
+                                <input
+                                  type="tel"
+                                  name="phone"
+                                  value="<%= phone %>"
+                                  id="phoneNumber"
+                                  class="form-control form-control-md"
+                                  placeholder="123-456-7890"
+                                />
+                                
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline">
+                                <h6 class="mb-2 pb-1" style="font-weight: 600">
+                                  Gender
+                                </h6>
+                                <div class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    id="femaleGender"
+                                    value="female"
+                                    checked
+                                  />
+                                  <label class="form-check-label" for="femaleGender"
+                                    >Female</label
+                                  >
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    id="maleGender"
+                                    value="male"
+                                  />
+                                  <label class="form-check-label" for="maleGender"
+                                    >Male</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+        
+                            <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline">
+                                <h6 class="mb-2 pb-1" style="font-weight: 600">Type</h6>
+                                <div class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="type"
+                                    id="UserType"
+                                    value="user"
+                                    checked
+                                  />
+                                  <label class="form-check-label" for="UserType"
+                                    >User</label
+                                  >
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="type"
+                                    id="partner"
+                                    value="partner"
+                                  />
+                                  <label class="form-check-label" for="PartnerType"
+                                    >Partner</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+        
+                          <div class="mt-4 pt-2 text-center">
+                            <button class="bubbly-button" type="submit" href="/home">Sign Up</button>
+                          </div>
+        
+                          <hr />
+        
+                          <div class="mt-4 pt-2 text-center">
+                            <span style="color: #1E2D59;"
+                              >Already have an account?<a href="/LogIn">
+                                Log In</a
+                              ></span
+                            >
+                            <p style="color: #1E2D59;">Or sign up with</p>
+                            <a href="/auth/google"
+                              ><img
+                                src="/Images/search.png"
+                                style="width: 40px; margin: 0 20px"
+                            /></a>
+                            <a href="/google-sign-in"
+                              ><img
+                                src="/Images/facebook.png"
+                                style="width: 40px; margin: 0 20px"
+                            /></a>
+                          </div>
+                        </form> 
+                  </div>
+                  <div class="col-md-10 col-lg-6 col-xl-4  d-flex text-center align-items-center order-1 order-lg-2">
+    
+                    <img src="/Images/BG1.png"
+                      class="img-fluid m-auto" alt="station">
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- footer -->
+      <footer>
+        <div class="container-fluid text-center mt-5">
+  
+          <ul class="list-unstyled social-media-icons text-center mt-2 list-unstyled">
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled footer-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="./Joinus.html">Join Us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          
+          <hr>
+          <p class="copyright" style="color: #ffff; font-size: 12px;">
+            &copy; 2023 <a href="/">Ev Charge Hub.</a>  All rights reserved.
+          </p>
+          
+        </div>
+      </footer>
+      
+
+    <script src="/js/style.js"></script>
+  </body>
+</html>

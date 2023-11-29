@@ -1,0 +1,922 @@
+<html lang="en">
+  <head>
+    <title>Profile -EV Charge Hub</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="/css/styleProfile.css" rel="stylesheet" />
+  
+    <!-- Latest compiled and minified CSS -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+ 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+      .modal-backdrop {
+        z-index: -1!important;
+      }
+   </style>
+  </head>
+
+  <body>
+    <!-- Full Desktop -->
+    <div class="sticky-top">
+      <header class="position-relative d-none d-sm-block m-2">
+        <!-- <div class="container"> -->
+        <div class="position-absolute ps-4" style="top: 20px">
+          <a class="navbar-brand font-weight-bold" href="/home">
+            <img
+              src="/Images/logo.png"
+              class="img-fluid"
+              style="max-width: 120px; max-height: 60px"
+            />
+          </a>
+        </div>
+
+        <nav
+          class="navbar navbar-expand-sm navbar-light"
+          style="margin-left: 150px"
+        >
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseNavbarid"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapseNavbarid">
+            <ul class="navbar-nav mt-2 d-flex justify-content-around">
+              <li class="nav-item active hoverelement">
+                <a class="nav-link font-weight-bold" href="/home"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/Joinus"
+                  >Join Us</a
+                >
+              </li>
+
+              <li class="nav-item dropdown hoverelement">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Service
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/Howto">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Carmodel"
+                      >Car Model</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="/MapBooking">Map & Booking</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end align-items-center">
+              <li class="nav-item btnSignUp">
+                <a class="img-fluid" href="/Profile"
+                  ><img src="/Images/profile/profile-user-purple.png" style="width: 36px; "></a
+                >
+              </li>
+              <li class="nav-item btnSignUp">
+                <a class="nav-link font-weight-bold" href="/SignUp"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item btnLogin">
+                <a
+                  class="nav-link font-weight-bold text-right"
+                  href="/LogIn"
+                  >Log In</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="position-relative">
+          <div class="d-flex justify-content-between">
+            <div class="">
+              <form
+                class="form-inline my-lg-0 justify-content-start"
+                style="margin-left: 150px"
+              >
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    style="
+                      border: 1px solid #ccc;
+                      border-radius: 20px;
+                      width: 300px;
+                    "
+                  />
+                  <div class="input-group-append">
+                    <button type="button" class="btn my-2 my-sm-0">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="position-absolute" style="right: 2%">
+              <div class="form-switch">
+                <input
+                  type="checkbox"
+                  class="form-check-input selector-button"
+                  id="selector"
+                />
+                <label class="form-check-label" for="selector"></label>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- Small Desktop -->
+    <header class="position-relative d-block d-sm-none">
+      <div class="d-flex justify-content-between pt-3 pl-3 pr-3 p-4">
+        <div class="">
+          <a class="navbar-brand font-weight-bold" href="/home">
+            <img
+              src="/Images/logo.png"
+              class="img-fluid"
+              style="max-width: 120px; max-height: 60px"
+            />
+          </a>
+        </div>
+
+        <div>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseNavbarid"
+            aria-label="Toggle navigation"
+          >
+            <div id="nav-icon3">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div class="collapse navbar-collapse" id="collapseNavbarid">
+            <div class="p-3">
+              <form
+                class="form-inline justify-content-start"
+                style="margin: 0px"
+              >
+                <div class="input-group flex-nowrap">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    style="
+                      border: 1px solid #ccc;
+                      border-radius: 20px;
+                      width: auto;
+                      max-width: 300px;
+                    "
+                  />
+                  <div class="input-group-append">
+                    <button type="submit" class="btn my-2 my-sm-0">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <ul class="navbar-nav d-flex justify-content-around p-3">
+              <li class="nav-item btnSignUp">
+                <a class="img-fluid" href="/Profile"
+                  ><img src="/Images/profile/profile-user-purple.png" style="width: 36px; "></a
+                >
+              </li>
+              <li class="nav-item active hoverelement">
+                <a class="nav-link font-weight-bold" href="/home"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/Joinus"
+                  >Join Us</a
+                >
+              </li>
+
+              <li class="nav-item dropdown hoverelement">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Service
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/Howto">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Carmodel"
+                      >Car Model</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="/MapBooking">Map & Booking</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
+              </li>
+              
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/SignUp"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/LogIn"
+                  >Log In</a
+                >
+              </li>
+            </ul>
+
+            <div class="" style="padding: 1rem">
+              <div class="form-switch">
+                <input
+                  type="checkbox"
+                  class="form-check-input selector-button"
+                  id="selectorb"
+                />
+                <label class="form-check-label" for="selectorb"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  <!-- profile -->
+  <div data-aos="fade-up" data-aos-delay="300">
+    <div class="container-fluid col-md-9 pt-5">
+      <h1 style="color: #683fbf; font-weight: bold; margin-bottom: 50px">
+        Settings
+      </h1>
+      <div class="row">
+        <div class="col-md-5 col-xl-4 mb-5">
+          <div class="card" >
+            <div class="list-group list-group-flush" role="tablist">
+              <a
+                class="list-group-item list-group-item-action active"
+                data-bs-toggle="list"
+                href="#account"
+                role="tab"
+              >
+                Account
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-bs-toggle="list"
+                href="#password"
+                role="tab"
+              >
+                Password
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-bs-toggle="list"
+                href="#bookinghistory"
+                role="tab"
+              >
+                Booking History
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-bs-toggle="list"
+                href="#statisticUser"
+                role="tab"
+              >
+                User statistics
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-bs-toggle="list"
+                href="#statisticPartner"
+                role="tab"
+              >
+                Partner statistics
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteAccountModal"
+                role="tab"
+              >
+                Delete account
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7 col-xl-8">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="account" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-actions">
+                    <h5 class="card-title mb-0">Public info</h5>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label for="inputFirstName" class="form-label"
+                            >Firstname</label
+                          >
+                          <input
+                            type="text"
+                            value="<%= UserData.name %>"
+                            class="form-control"
+                            id="inputFirstName"
+                            placeholder="your firstname"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="inputLastName" class="form-label"
+                            >Lastname</label
+                          >
+                          <input
+                            type="text"
+                            value="<%= UserData.surname %>"
+                            class="form-control"
+                            id="inputLastName"
+                            placeholder="your lastname"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="text-center">
+                            <!-- ใส่ id เพื่อให้ง่ายต่อการดึง element ด้วย JavaScript -->
+                            <img id="profile-image" src="/Images/profile/profile-user pink.png" class="img-fluid rounded-circle" style="max-width: 120px;">
+                            <div class="mt-2">
+                                <!-- ใส่ id เพื่อให้ง่ายต่อการดึง element ด้วย JavaScript -->
+                                <label for="upload-profile" class="btn btn-primary">
+                                    <i class="fa fa-upload"></i> Upload
+                                </label>
+                                <!-- สร้าง input element ซ่อนไว้ -->
+                                <input type="file" id="upload-profile" style="display: none;" accept="image/*" onchange="changeProfileImage(event)">
+                            </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                      Save changes
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="password" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-actions">
+                    <h5 class="card-title mb-0">Password</h5>
+                  </div>
+                </div>
+                <form class="m-3">
+                  <div class="form-group">
+                    <label for="inputPasswordCurrent" class="form-label">Current password</label>
+                    <input
+                      type="password"
+                      value="<%= UserData.password %>"
+                      class="form-control"
+                      id="inputPasswordCurrent"
+                      placeholder="Enter current password"
+                    />
+                    <small><a href="#" style="color: #E15CF2;">Forgot your password?</a></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPasswordNew" class="form-label">New password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="inputPasswordNew"
+                      placeholder="Enter new password"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPasswordNew2" class="form-label">Verify password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="inputPasswordNew2"
+                      placeholder="Re-enter new password"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+            <!-- Booking History Tab -->
+            <div class="tab-pane fade" id="bookinghistory" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-actions">
+                    <h5 class="card-title mb-0">Booking History</h5>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul id="booking-history-list"></ul>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="statisticUser" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-actions">
+                    <h5 class="card-title mb-0">User Statistics</h5>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="charges-chart" class="form-label"
+                      >Number of Charges</label
+                    >
+                    <canvas
+                      id="charges-chart"
+                      width="400"
+                      height="200"
+                    ></canvas>
+                  </div>
+                  <div class="form-group">
+                    <label for="expenses-chart" class="form-label"
+                      >Expenses in Charging</label
+                    >
+                    <canvas
+                      id="expenses-chart"
+                      width="400"
+                      height="200"
+                    ></canvas>
+                  </div>
+                  <div class="form-group">
+                    <label for="total-points" class="form-label">Points</label>
+                    <p id="total-points"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="statisticPartner" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-actions">
+                    <h5 class="card-title mb-0">Partner Statistics</h5>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="branches-chart" class="form-label"
+                      >Number of Branches</label
+                    >
+                    <canvas
+                      id="branches-chart"
+                      width="400"
+                      height="200"
+                    ></canvas>
+                  </div>
+                  <div class="form-group">
+                    <label for="income-chart" class="form-label"
+                      >Total Income</label
+                    >
+                    <canvas id="income-chart" width="400" height="200"></canvas>
+                  </div>
+                  <div class="form-group">
+                    <label for="total-users" class="form-label"
+                      >Number of Users</label
+                    >
+                    <p id="total-users"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="deleteAccountModal"
+              tabindex="-1"
+              aria-labelledby="deleteAccountModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAccountModalLabel">
+                      Delete Account
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      Are you sure you want to delete your account? This action
+                      cannot be undone.
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="go-to-top">
+    <a href="#">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+  </div>
+<!-- end profile -->
+
+    <!-- footer -->
+    <div class="container-fluid" id="footer">
+      <h3 class="text-center pt-5" style="color: #683fbf">
+        Want to partner with us?
+      </h3>
+      <p class="text-center"></p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3">
+          <a
+            class="btn btn-block btn-outline-primary"
+            style="border-radius: 20px; width: 100%; margin: 0 auto"
+            href="/Joinus"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        <div class="container-fluid text-center mt-5">
+          <ul
+            class="list-unstyled social-media-icons text-center mt-2 list-unstyled"
+          >
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled footer-menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/Joinus">Join Us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+
+          <hr style="color: #683fbf" />
+          <p class="copyright" style="color: #683fbf; font-size: 12px">
+            &copy; 2023 <a href="/home">Ev Charge Hub.</a> All rights
+            reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+
+    <!-- dark mood -->
+    <script>
+      $(document).ready(function () {
+        // กำหนดค่าเริ่มต้น
+        $("body").addClass("bg-black");
+        $("nav").removeClass("navbar-dark");
+        $("header").removeClass("navbar-dark");
+        $(".custom-control-label").removeClass("text-white");
+        $("h1").removeClass("text-white");
+        $("h5").removeClass("text-white");
+        $(".input-group-append .btn i").css("color", "#763DF2");
+
+        $(".selector-button").change(function () {
+          // สลับสีพื้นหลัง
+          $("body").toggleClass("bg-black");
+          // ไปทำเป็นtransparent
+          $("nav").toggleClass("navbar-dark");
+          $("header").toggleClass("navbar-dark");
+
+
+          if ($(this).is(":checked")) {
+            // เปลี่ยนสีไอคอนเป็นสีขาว
+            $(".input-group-append .btn i").css("color", "#763DF2");
+          } else {
+            // เปลี่ยนสีไอคอนเป็นสีปกติ
+            $(".input-group-append .btn i").css("color", "#763DF2");
+          }
+        });
+      });
+    </script>
+
+  <!-- effect navbar -->
+    <script>
+      $(document).ready(function () {
+        $("#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4").click(function () {
+          $(this).toggleClass("open");
+        });
+      });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- User Data  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ดึงข้อมูลจากฐานข้อมูล (ในตัวอย่างนี้ให้แก้ไขเป็นการดึงข้อมูลจริง)
+        // ตัวอย่างนี้สร้างข้อมูลแบบสุ่มเพื่อให้เห็นวิธีการใช้ Chart.js
+
+        // สร้างข้อมูลสำหรับแกน X (เดือน)
+        var months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        // สร้างข้อมูลสำหรับแกน Y (จำนวนครั้งที่ชาร์จ)
+        var charges = [10, 20, 15, 25, 30, 18, 22, 28, 35, 40, 32, 38];
+
+        // สร้างข้อมูลสำหรับค่าใช้จ่ายในการชาร์จของเดือนนั้น ๆ
+        var expenses = [50, 80, 60, 100, 120, 70, 90, 110, 130, 150, 120, 140];
+
+        // สร้างข้อมูลสำหรับยอดสะสมทั้งหมด
+        var totalPoints = 600; // ตัวอย่าง, ค่าที่คำนวณมาจากฐานข้อมูล
+
+        var ctxCharges = document
+          .getElementById("charges-chart")
+          .getContext("2d");
+        var chargesChart = new Chart(ctxCharges, {
+          type: "bar",
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: "Number of Charges",
+                data: charges,
+                backgroundColor: "#9cf2f2af",
+                borderColor: "#9CF2F2",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+
+        var ctxExpenses = document
+          .getElementById("expenses-chart")
+          .getContext("2d");
+        var expensesChart = new Chart(ctxExpenses, {
+          type: "bar",
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: "Expenses in Charging",
+                data: expenses,
+                backgroundColor: "#e05cf290 ",
+                borderColor: "#E15CF2",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+
+        // แสดงยอดสะสมทั้งหมดเป็นข้อความ
+        var totalPointsText = document.getElementById("total-points");
+        totalPointsText.innerHTML = "Total Accumulated Points: " + totalPoints;
+      });
+    </script>
+
+    <!--  Partner Data -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ดึงข้อมูลจากฐานข้อมูล (ในตัวอย่างนี้ให้แก้ไขเป็นการดึงข้อมูลจริง)
+
+        // สร้างข้อมูลสำหรับแกน X (เดือน)
+        var months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        // สร้างข้อมูลสำหรับแกน Y (จำนวนสาขาธุรกิจ)
+        var branches = [5, 8, 7, 10, 12, 6, 9, 11, 14, 16, 13, 15];
+
+        // สร้างข้อมูลสำหรับรายได้รวมในแต่ละเดือน
+        var totalIncome = [
+          5000, 8000, 7000, 10000, 12000, 6000, 9000, 11000, 14000, 16000,
+          13000, 15000,
+        ];
+
+        // สร้างข้อมูลสำหรับจำนวนผู้เข้ามาใช้งานในแต่ละเดือน
+        // สร้างข้อมูลสำหรับยอดสะสมทั้งหมด
+        var totalUsers = 3300; // ตัวอย่าง, ค่าที่คำนวณมาจากฐานข้อมูล
+
+        var ctxBranches = document
+          .getElementById("branches-chart")
+          .getContext("2d");
+        var branchesChart = new Chart(ctxBranches, {
+          type: "bar",
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: "Number of Branches",
+                data: branches,
+                backgroundColor: "#9cf2f2af",
+                borderColor: "#9CF2F2",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+
+        var ctxIncome = document
+          .getElementById("income-chart")
+          .getContext("2d");
+        var incomeChart = new Chart(ctxIncome, {
+          type: "bar",
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: "Total Income",
+                data: totalIncome,
+                backgroundColor: "#e05cf290 ",
+                borderColor: "#E15CF2",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+
+        // แสดงยอดสะสมทั้งหมดเป็นข้อความ
+        var totalUsersText = document.getElementById("total-users");
+        totalUsersText.innerHTML = "Total Users: " + totalUsers;
+      });
+    </script>
+
+    <!-- nav bar sticky -->
+    <script>
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          document.querySelector(".sticky-top").style.top = "-120px";
+        } else {
+          document.querySelector(".sticky-top").style.top = "0";
+        }
+      };
+    </script>
+
+    <!-- change pic -->
+    <script src="/js/style.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>

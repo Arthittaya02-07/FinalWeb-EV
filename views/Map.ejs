@@ -1,0 +1,568 @@
+
+<html lang="en">
+  <head>
+    <title>Map -EV Charge Hub</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9sUl6YOp_kooun5VC3oqT3_TJt0ev9r4" async defer></script>
+    
+    
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+      .modal-backdrop {
+        z-index: -1!important;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Full Desktop -->
+    <div class="sticky-top">
+      <header class="position-relative d-none d-sm-block m-2">
+        <!-- <div class="container"> -->
+        <div class="position-absolute ps-4" style="top: 20px">
+          <a class="navbar-brand font-weight-bold" href="/home">
+            <img
+              src="/Images/logo.png"
+              class="img-fluid"
+              style="max-width: 120px; max-height: 60px"
+            />
+          </a>
+        </div>
+
+        <nav
+          class="navbar navbar-expand-sm navbar-light"
+          style="margin-left: 150px"
+        >
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseNavbarid"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapseNavbarid">
+            <ul class="navbar-nav mt-2 d-flex justify-content-around">
+              <li class="nav-item active hoverelement">
+                <a class="nav-link font-weight-bold" href="/home"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/Joinus"
+                  >Join Us</a
+                >
+              </li>
+
+              <li class="nav-item dropdown hoverelement">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Service
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/Howto">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Carmodel"
+                      >Car Model</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="/Map">Map & Booking</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end">
+              <li class="nav-item btnSignUp">
+                <a class="nav-link font-weight-bold" href="/SignUp"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item btnLogin">
+                <a
+                  class="nav-link font-weight-bold text-right"
+                  href="/LogIn"
+                  >Log In</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="position-relative">
+          <div class="d-flex justify-content-between">
+            <div class="">
+              <form
+                class="form-inline my-lg-0 justify-content-start"
+                style="margin-left: 150px"
+              >
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    style="
+                      border: 1px solid #ccc;
+                      border-radius: 20px;
+                      width: 300px;
+                    "
+                  />
+                  <div class="input-group-append">
+                    <button type="button" class="btn my-2 my-sm-0">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="position-absolute" style="right: 2%">
+              <div class="form-switch">
+                <input
+                  type="checkbox"
+                  class="form-check-input selector-button"
+                  id="selector"
+                />
+                <label class="form-check-label" for="selector"></label>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- Small Desktop -->
+    <header class="position-relative d-block d-sm-none">
+      <div class="d-flex justify-content-between pt-3 pl-3 pr-3 p-4">
+        <div class="">
+          <a class="navbar-brand font-weight-bold" href="/home">
+            <img
+              src="/Images/logo.png"
+              class="img-fluid"
+              style="max-width: 120px; max-height: 60px"
+            />
+          </a>
+        </div>
+
+        <div>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseNavbarid"
+            aria-label="Toggle navigation"
+          >
+            <div id="nav-icon3">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div class="collapse navbar-collapse" id="collapseNavbarid">
+            <div class="p-3">
+              <form
+                class="form-inline justify-content-start"
+                style="margin: 0px"
+              >
+                <div class="input-group flex-nowrap">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    style="
+                      border: 1px solid #ccc;
+                      border-radius: 20px;
+                      width: auto;
+                      max-width: 300px;
+                    "
+                  />
+                  <div class="input-group-append">
+                    <button type="submit" class="btn my-2 my-sm-0">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <ul class="navbar-nav d-flex justify-content-around p-3">
+              <li class="nav-item active hoverelement">
+                <a class="nav-link font-weight-bold" href="/Home"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/Joinus"
+                  >Join Us</a
+                >
+              </li>
+
+              <li class="nav-item dropdown hoverelement">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Service
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/Howto">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Carmodel"
+                      >Car Model</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="/Map">Map & Booking</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
+              </li>
+
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/SignUp"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="/LogIn"
+                  >Log In</a
+                >
+              </li>
+            </ul>
+
+            <div class="" style="padding: 1rem">
+              <div class="form-switch">
+                <input
+                  type="checkbox"
+                  class="form-check-input selector-button"
+                  id="selectorb"
+                />
+                <label class="form-check-label" for="selectorb"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="container-fluid maptext pt-5 mb-5">
+
+        <h1 class="under">Reserve first,<br>Don't waste time waitings</h1>
+        <h1 class="over">Reserve first,<br>Don't waste time waitings</h1>
+        <img src="/Images/plugged-chargers-into-two-electric-cars-charge-station.jpg" class="img-fluid">
+    </div>
+
+   <div class="container-fluid maptext2 mb-5">
+     
+   </div>
+    
+    <div data-aos="fade-up" data-aos-delay="300">
+    <div class="container-fluid col-md-11 pt-5" >
+        <div class="row">
+         <!-- Column 1: Form to select region, province, district, and booking -->
+    <div class="col-md-6"  style="font-family: 'Noto Sans Thai', sans-serif">
+    <form>
+      <!-- Add your form elements here (region, province, district, booking) -->
+      <div class="card mb-3 m-auto" style="width: 90%">
+        <div class="card-body">
+          <h4 class="card-title">สถานที่</h4>
+          <div class="mb-3">
+            <label for="region">ภาค</label>
+            <select class="form-control" id="region">
+              <option value="">เลือกภาค</option>
+              <option value="ภาคเหนือ">ภาคเหนือ</option>
+              <option value="ภาคตะวันออกเฉียงเหนือ">ภาคตะวันออกเฉียงเหนือ</option>
+              <option value="ภาคกลาง">ภาคกลาง</option>
+              <option value="ภาคตะวันออก">ภาคตะวันออก</option>
+              <option value="ภาคตะวันตก">ภาคตะวันตก</option>
+              <option value="ภาคใต้">ภาคใต้</option>
+            </select>
+          </div>
+          
+          <div class="mb-3">
+            <label for="province">จังหวัด</label>
+            <select class="form-control" id="province">
+              <option value="">เลือกจังหวัด</option>
+            </select>
+          </div>
+          
+          <div class="mb-3">
+            <label for="district">เขต/อำเภอ</label>
+            <select class="form-control" id="district">
+              <option value="">เลือกเขต/อำเภอ</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3 m-auto" style="width: 90%">
+        <div class="card-body">
+          <h4 class="card-title">ช่วงเวลา</h4>
+          <div class="mb-3">
+            <label for="bookingDate" class="form-label">วันที่</label>
+            <input type="date" class="form-control" id="bookingDate" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="bookingTime" class="form-label">เวลา</label>
+            <div class="clock-container">
+              <input type="time" class="form-control" id="bookingTime" required>
+              <div class="clock"></div>
+            </div>
+        </div>
+      </div>
+</div>
+      <button type="button" class="btn btn-primary mb-3"  style="margin-left: 40px;" onclick="showSummary()">ตรวจสอบการจอง</button>
+ 
+      <div class="card mb-3 m-auto" id="summaryCard" style="width: 90%; display: none;">
+        <div class="card-body">
+          <h4 class="card-title">สรุปการจอง</h4>
+          <p class="card-text" id="locationSummary"></p>
+          <p class="card-text" id="dateSummary"></p>
+          <p class="card-text" id="timeSummary"></p>
+          <button type="button" class="btn btn-primary" onclick="confirmBooking()">จอง</button>
+        </div>
+      </div>
+
+      <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">ข้อความแจ้งเตือน</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>กรุณากรอกข้อมูลให้ครบถ้วน</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal ยืนยันการจอง -->
+<div class="modal fade" tabindex="-1" role="dialog" id="confirmationModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">ยืนยันการจอง</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>คุณต้องการที่จะทำการจองหรือไม่?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary" onclick="confirmBooking()">ยืนยัน</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+    </form>
+  </div>
+  
+      
+ <!-- Column 2: Map -->
+ <div class="col-md-6 ">
+    <div id="map" style="border-radius: 30px; overflow: hidden;">
+        <iframe src="https://maps.google.com/maps?q=manhattan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" style="border:0; width: 100%; height: 700px; border-radius: 30px;" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <div class="go-to-top">
+        <a href="#">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+      
+    <!-- footer -->
+    <div class="container-fluid" id="footer">
+      <h3 class="text-center pt-5" style="color: #683fbf">
+        Want to partner with us?
+      </h3>
+      <p class="text-center"></p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3">
+          <a
+            class="btn btn-block btn-outline-primary"
+            style="border-radius: 20px; width: 100%; margin: 0 auto"
+            href="/Joinus"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <div class="go-to-top">
+        <a href="#">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+
+      <footer>
+        <div class="container-fluid text-center mt-5">
+          <ul
+            class="list-unstyled social-media-icons text-center mt-2 list-unstyled"
+          >
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled footer-menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/Joinus">Join Us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+
+          <hr style="color: #683fbf" />
+          <p class="copyright" style="color: #683fbf; font-size: 12px">
+            &copy; 2023 <a href="/home">Ev Charge Hub.</a> All rights
+            reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!-- dark mood -->
+    <script>
+      $(document).ready(function () {
+        // กำหนดค่าเริ่มต้น
+        $("body").addClass("bg-black");
+        $("nav").removeClass("navbar-dark");
+        $("header").removeClass("navbar-dark");
+        $(".custom-control-label").removeClass("text-white");
+        $("h1").removeClass("text-white");
+        $("h5").removeClass("text-white");
+        $(".input-group-append .btn i").css("color", "#763DF2");
+
+        $(".selector-button").change(function () {
+          // สลับสีพื้นหลัง
+          $("body").toggleClass("bg-black");
+          // ไปทำเป็นtransparent
+          $("nav").toggleClass("navbar-dark");
+          $("header").toggleClass("navbar-dark");
+
+          if ($(this).is(":checked")) {
+            // เปลี่ยนสีไอคอนเป็นสีขาว
+            $(".input-group-append .btn i").css("color", "#763DF2");
+          } else {
+            // เปลี่ยนสีไอคอนเป็นสีปกติ
+            $(".input-group-append .btn i").css("color", "#763DF2");
+          }
+        });
+      });
+    </script>
+
+    <!-- effect navbar -->
+    <script>
+      $(document).ready(function () {
+        $("#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4").click(function () {
+          $(this).toggleClass("open");
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   <!-- nav bar sticky -->
+   <script>
+    $(document).ready(function () {
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          $(".sticky-top").css("top", "-120px");
+        } else {
+          $(".sticky-top").css("top", "0");
+        }
+      };
+    });
+  </script>
+
+
+
+    <!-- change pic -->
+    <script src="/js/style.js"></script>
+    
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
