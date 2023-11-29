@@ -427,12 +427,116 @@ d::before {
   transform: scale(0.8);
   transition: opacity 0.3s, transform 0.3s;
 }
-
 .bookingstep:hover img,
 .bookingstep:hover h2 {
   opacity: 1;
   transform: scale(1);
 }
+
+.container-fluid.backgroundAnimation {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .container-fluid.backgroundAnimation {
+    max-height: 240px; /* ปรับขนาดความสูงตามที่ต้องการ */
+  }
+  .container-fluid.backgroundAnimation h1{
+    font-size: 24px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-fluid.backgroundAnimation {
+    max-height: 500px; /* ปรับขนาดความสูงตามที่ต้องการ */
+  }
+  .container-fluid.backgroundAnimation h1{
+    font-size: 80px !important;
+  }
+}
+
+
+.backgroundAnimation {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backgroundAnimation img {
+  position: absolute;
+  top: 0; /* Set top to 0 initially */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+#moon {
+  position: absolute;
+  max-width: 20%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#star {
+  position: absolute;
+  width: 70%;
+  height: auto;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#mountain,
+#cloud,
+#city2,
+#city1,
+#river,
+#road,
+#rock,
+#car {
+  width: 100%;
+}
+
+#mountain {
+  top: 15%;
+}
+#cloud {
+  top: 0;
+}
+
+#city2 {
+  top: 20%;
+}
+
+#city1 {
+  top: 15%;
+}
+
+#river {
+  top: 55%;
+}
+
+#road {
+  top: 20%;
+}
+
+#rock {
+  top: 63%;
+}
+
+#car {
+  left: 65%;
+  max-width: 50%;
+  top: 55%;
+}
+
+
+
+
 
 
 
