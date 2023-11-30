@@ -8,10 +8,11 @@
     />
 
     <link href="./style.css" rel="stylesheet" />
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="./styleProfile.css" rel="stylesheet" />
+   
+
 
     <!-- Latest compiled and minified CSS -->
     <link
@@ -37,9 +38,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="./Images/logo.png" />
 
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-
+      
+      .textfind {
+      font-weight: bold;
+      font-size: 80px;
+      text-align: center;
+      background: linear-gradient(45deg, #E15CF2, #763DF2, #9CF2F2, #683FBF, #1E2D59);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     </style>
   </head>
 
@@ -322,34 +332,89 @@
 
     <div class="container-fluid backgroundAnimation">
       
-      <img src="./Images/homepara/Home_0000_moon.png" id="moon">
+      <img src="./Images/homepara/Home_0001_moon.png" id="moon">
       <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;">WELCOME, USER</h1>
-     <img src="./Images/homepara/Home_0009_star.png" id="star">
-     <img src="./Images/homepara/Home_0008_cloud.png" id="cloud">
-     <img src="./Images/homepara/Home_0006_river.png" id="river">
-      <img
-        id="mountain"
-        src="./Images/homepara/Home_0007_mountain.png"
-        class="img-fluid"
-      />
+     <img src="./Images/homepara/Home_0006_star.png" id="star">
+     <img src="./Images/homepara/Home_0007_cloud.png" id="cloud">
+     <img src="./Images/homepara/Home_0005_mountain.png" id="mountain">
+     <img src="./Images/homepara/Home_0004_city2.png" id="city2">
+     <img src="./Images/homepara/Home_0003_city1.png" id="city1">
+     <img src="./Images/homepara/Home_0002_road.png" id="road">
+     <img src="./Images/homepara/Home_0000_car.png" id="car" >
+    </div>
+
+    <h1 class="textfind" style="font-weight: bold; font-size: 80px; text-align: center;">Find a charging station near you</h1>
+
+    <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid maphome">
+      <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
+    </div>
+
+      <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carvideo">
+        <iframe
+          width="1454"
+          height="400"
+          src="https://www.youtube.com/embed/bE_guNKXxlM?si=YQi7mh-vr_hDd6X7&controls=0&start=7&autoplay=1&mute=1" 
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+          style="border: none;"
+        ></iframe>
+      </div>
+      </div>
+      
+      
+
+
+    <div data-aos="fade-up" data-aos-duration="1000">   
+    <div class="container-fluid">
+      <div class="row g-0 position-relative justify-content-center mt-5">
+        <!-- รูปทางซ้าย -->
+        <div class="col-md-3 m-auto text-center">
+          <img src="./Images/save-the-earth.png" class="img-fluid wave" style="width: 300px;">
+        </div>
     
-     <img src="./Images/homepara/Home_0005_city2.png" id="city2">
-     <img src="./Images/homepara/Home_0004_city1.png" id="city1">
-     <img src="./Images/homepara/Home_0003_road.png" id="road">
-     <img src="./Images/homepara/Home_0002_car.png" id="car" >
-     <img src="./Images/homepara/Home_0001_rock.png" id="rock">
-     
-    </div>
+        <div class="col-md-6">
+          <!-- แถวที่ 1 -->
+          <div class="row counting mb-3">
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">709.6</div>
+              <h4 style="color: grey; font-weight: 500;">Reduce carbon emissions by 709.6 tons</h4>
+            </div>
+        
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">20.6</div>
+              <h4 style="color: grey; font-weight: 500;">Cut greenhouse gas emissions by using electric cars</h4>
+            </div>
+          </div>
+         
+          <!-- แถวที่ 2 -->
+          <div class="row counting">
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">7.1</div>
+              <h4 style="color: grey; font-weight: 500;">Electric cars have driven a total of 7.1 million km</h4>
+            </div>
+        
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">20</div>
+              <h4 style="color: grey; font-weight: 500;">EVs emit 20% less heat and can make cities cooler</h4>
+            </div>
+          </div>
+        </div>
+  </div> 
 
-    <div class="container-fluid content1" style="background-color: black; height: 500px;">
 
-    </div>
+
 
     <div class="go-to-top">
       <a href="#">
         <i class="fas fa-arrow-up"></i>
       </a>
     </div>
+  
 
     <!-- footer -->
     <div class="container-fluid" id="footer">
@@ -469,6 +534,7 @@
     <script>
       AOS.init();
     </script>
+    <!-- animation -->
  <script>
   let moon = document.getElementById("moon")
   let city1 = document.getElementById("city1")
@@ -484,5 +550,15 @@
     welcome.style.marginTop = value * 0.5 + "px";
   });
 </script>
+<!-- counting -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+ $(".number").counterUp({delay:10,time:1000});
+  });
+</script>
+
   </body>
 </html>

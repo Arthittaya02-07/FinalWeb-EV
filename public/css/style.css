@@ -433,7 +433,11 @@ d::before {
   transform: scale(1);
 }
 
+
+
+
 .container-fluid.backgroundAnimation {
+  height: 100%;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -448,13 +452,18 @@ d::before {
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container-fluid.backgroundAnimation {
-    max-height: 500px; /* ปรับขนาดความสูงตามที่ต้องการ */
+    max-height: 500px; 
   }
   .container-fluid.backgroundAnimation h1{
     font-size: 80px !important;
   }
 }
-
+/* Media query เมื่อหน้าจอกว้าง 1280px ขึ้นไป (ขึ้นอยู่กับความต้องการของ Macbook) */
+@media screen and (min-width: 1280px) {
+  .container-fluid.backgroundAnimation {
+    max-height: 1200px; /* ปรับขนาดความสูงตามที่ต้องการ */
+  }
+}
 
 .backgroundAnimation {
   position: relative;
@@ -484,19 +493,17 @@ d::before {
 #star {
   position: absolute;
   width: 70%;
-  height: auto;
   top: -10%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #mountain,
+#sta
 #cloud,
 #city2,
 #city1,
-#river,
 #road,
-#rock,
 #car {
   width: 100%;
 }
@@ -516,26 +523,51 @@ d::before {
   top: 15%;
 }
 
-#river {
-  top: 55%;
-}
 
 #road {
-  top: 20%;
-}
-
-#rock {
-  top: 63%;
+  top: 25%;
 }
 
 #car {
   left: 65%;
-  max-width: 50%;
-  top: 55%;
+  max-width: 45%;
+  top: 60%;
 }
 
 
+.wave:hover {
+  animation: waveAnimation 1s infinite;
+}
 
+@keyframes waveAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.wave-text {
+  transition: transform 0.5s ease-in-out;
+}
+
+.wave-text:hover {
+  animation: waveAnimation 1s infinite;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
 
 
