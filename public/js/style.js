@@ -379,27 +379,29 @@ $('#bookinghistory').on('shown.bs.tab', function (e) {
 
 
 
-  $(document).ready(function () {
-    // เพิ่ม Event Listener สำหรับลิงก์ "How to"
-    $("a[href='#howTo']").on("click", function (e) {
-      e.preventDefault(); // ป้องกันการทำงานของลิงก์
 
-      // ให้หน้าเว็บเลื่อนไปยังตำแหน่งของส่วน "HowTo" ด้วย animate
-      $("html, body").animate({
-        scrollTop: $("#howTo").offset().top
-      }, 1000); // 1000 คือความเร็วในการเลื่อน (milliseconds)
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // ค้นหาลิงก์ "How to" และ "Car Model"
+    const howToLink = document.querySelector('a[href="#howToContainer"]');
+    const carModelLink = document.querySelector('a[href="#carModelContainer"]');
+
+    // หากมีการคลิกที่ลิงก์ "How to"
+    howToLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.querySelector('#howToContainer').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // เพิ่ม Event Listener สำหรับลิงก์ "Car Model"
-    $("a[href='#carModel']").on("click", function (e) {
-      e.preventDefault(); // ป้องกันการทำงานของลิงก์
-
-      // ให้หน้าเว็บเลื่อนไปยังตำแหน่งของส่วน "Car Model" ด้วย animate
-      $("html, body").animate({
-        scrollTop: $("#carModel").offset().top
-      }, 1000); // 1000 คือความเร็วในการเลื่อน (milliseconds)
+    // หากมีการคลิกที่ลิงก์ "Car Model"
+    carModelLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.querySelector('#carModelContainer').scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+
+
+
 
 
 
