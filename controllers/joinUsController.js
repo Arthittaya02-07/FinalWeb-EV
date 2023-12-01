@@ -44,10 +44,5 @@ module.exports = async (req, res) => {
 
 // module.exports = (req,res) => {
 
-
-
-
-
-
 //     res.render('Joinus')
 //    }

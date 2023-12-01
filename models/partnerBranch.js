@@ -28,9 +28,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const partnerSchema = new Schema({
-    userId: { type: String, required: true }, // อาจจะใช้ ref เพื่อเชื่อมกับ User
-    zone: { type: String, required: true },
-    province: { type: String, required: true },
+    userId: { type: String, }, // อาจจะใช้ ref เพื่อเชื่อมกับ User
+    zone: { type: String, },
+    province: { type: String, },
     typeBusiness: { type: String },
     typeCarpark: { type: String },
     parkingSpaces: { type: String }
