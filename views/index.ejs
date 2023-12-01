@@ -338,38 +338,59 @@
     </div>
 
     <div data-aos="fade-up" data-aos-duration="1000">
-    <div class="container-fluid introev">
-    <h1 class="textfind" style="font-weight: bold; font-size: 60px; text-align: center;">What does Evolt do?</h1>
+      <div class="container-fluid introev m-auto mt-5 ">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">What does Evolt do?</h1>
+            <h3 style="font-weight: 500; color: grey;">We are a full service provider of electric vehicle charging stations</h3>
+          </div>
+          <div class="col-md-3">
+            <div class="image-container align-items-center mx-auto mt-5">
+              <img src="./Images/EV Image/3407.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+              <div class="image-container align-items-center mx-auto ">
+              <img src="./Images/EV Image/3d-electric-car-with-charged-battery.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            <div class="image-container align-items-center mx-auto">
+              <img src="./Images/EV Image/full-shot-man-charging-electric-car.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+    
+    <img src="./Images/radius.png" style="position: absolute; right: 65%; top: 1000px; width: 60%; z-index: -1;">
 
+    
     <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="row justify-content-center mt-5 mx-auto">
+        <div class="col-md-4 justify-content-center position-relative">        </div>
+      <div class="col-md-6  text-md-end mb-3">
+        <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">Find a charging station near you</h1>
+      </div>
+    </div>
     <div class="container-fluid maphome">
       <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
     </div>
-
-      <div data-aos="fade-up" data-aos-duration="1000">
-      <div class="container-fluid carvideo">
-        <iframe
-          width="1454"
-          height="400"
-          src="https://www.youtube.com/embed/bE_guNKXxlM?si=YQi7mh-vr_hDd6X7&controls=0&start=7&autoplay=1&mute=1" 
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-          style="border: none;"
-        ></iframe>
-      </div>
-      </div>
-      
-      
-
-
-    <div data-aos="fade-up" data-aos-duration="1000">  
     
-    <div class="container-fluid">
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carvideo mt-5">
+        <video width="100%" height="auto" autoplay muted loop controls>
+          <source src="./Images/Volvo S90 Recharge_ Luxury is not a thing.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    
+      
+      
+
+    <img src="./Images/radius.png" style="position: absolute; left: 65%; top: 2700px; width: 60%; z-index: -1;">
+    <div data-aos="fade-up" data-aos-duration="1000">  
+    <div class="container-fluid ">
       <div class="row g-0 position-relative justify-content-center mt-5">
         <!-- รูปทางซ้าย -->
         <div class="col-md-3 m-auto text-center">
@@ -557,6 +578,17 @@
   $(document).ready(function(){
  $(".number").counterUp({delay:10,time:1000});
   });
+</script>
+
+<script>
+  $(".image-container img").mouseenter(function () {
+  $(this).parent().addClass("hover");
+});
+
+$(".image-container img").mouseleave(function () {
+  $(this).parent().removeClass("hover");
+});
+
 </script>
 
   </body>
