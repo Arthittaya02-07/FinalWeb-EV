@@ -6,18 +6,10 @@ const UserSchema = new Schema ({
     email : {
         type: String,
         required : [true, 'Please Enter Your Email'],
-        // match: [/^\S+@\S+\.\S+$/, 'Invalid email format'],
     },
     password: {
         type: String,
         required : [true, 'Please Enter Your password'],
-        // validate: {
-        //     validator: function(value) {
-        //         const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
-        //         return regex.test(value);
-        //     },
-        //     message: 'Password must be at least 8 characters long and include at least one digit, one lowercase, one uppercase, and one special character.',
-        // },
     },
     repassword: {
         type: String,
@@ -64,6 +56,24 @@ UserSchema.pre('save',function(next) {
         console.error(error)
     })
  })
+
+//  app.post('/update-profile', async (req, res) => {
+//     const { firstName, lastName } = req.body;
+  
+//     try {
+//       // ค้นหาข้อมูลผู้ใช้ (ให้แก้ไขตามต้องการ)
+//       const user = await User.findOneAndUpdate(
+//         { /* ตั้งเงื่อนไขการค้นหา */ },
+//         { $set: { firstName, lastName } },
+//         { new: true }
+//       );
+  
+//       res.json({ success: true, user });
+//     } catch (error) {
+//       console.error('เกิดข้อผิดพลาด:', error);
+//       res.status(500).json({ success: false, error: 'Internal Server Error' });
+//     }
+//   });
 
 const User = mongoose.model('User',UserSchema)
 module.exports = User
