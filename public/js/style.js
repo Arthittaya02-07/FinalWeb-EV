@@ -379,6 +379,31 @@ $('#bookinghistory').on('shown.bs.tab', function (e) {
 
 
 
+  $(document).ready(function () {
+    // เพิ่ม Event Listener สำหรับลิงก์ "How to"
+    $("a[href='#howTo']").on("click", function (e) {
+      e.preventDefault(); // ป้องกันการทำงานของลิงก์
+
+      // ให้หน้าเว็บเลื่อนไปยังตำแหน่งของส่วน "HowTo" ด้วย animate
+      $("html, body").animate({
+        scrollTop: $("#howTo").offset().top
+      }, 1000); // 1000 คือความเร็วในการเลื่อน (milliseconds)
+    });
+
+    // เพิ่ม Event Listener สำหรับลิงก์ "Car Model"
+    $("a[href='#carModel']").on("click", function (e) {
+      e.preventDefault(); // ป้องกันการทำงานของลิงก์
+
+      // ให้หน้าเว็บเลื่อนไปยังตำแหน่งของส่วน "Car Model" ด้วย animate
+      $("html, body").animate({
+        scrollTop: $("#carModel").offset().top
+      }, 1000); // 1000 คือความเร็วในการเลื่อน (milliseconds)
+    });
+  });
+
+
+
+
 
 
 
