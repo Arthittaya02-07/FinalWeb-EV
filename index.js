@@ -9,7 +9,10 @@ const passport = require('passport')
 
 
 //MongoDB Connect
-mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/?retryWrites=true&w=majority')
+// mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/')
+
+
 
 global.loggedIn = null
 
