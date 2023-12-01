@@ -1,7 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
-const datagoogle = require('../models/DataGoogle');
+const googledata = require('../models/DataGoogle');
 
 module.exports = function (passport) {
   passport.use(new GoogleStrategy(
@@ -23,12 +23,12 @@ module.exports = function (passport) {
         console.log(accessToken)
 
         try {
-          let user = await datagoogle.findOne({ googleID: profile.id });
+          let user = await googledata.findOne({ googleID: profile.id });
 
           if (user) {
             return done(null, user);
           } else {
-            user = await datagoogle.create(newUser);
+            user = await googledata.create(newUser);
             return done(null, user);
           }
         } catch (err) {
@@ -38,7 +38,6 @@ module.exports = function (passport) {
       }
     )
   );
-
   passport.serializeUser((user, done) => {
     done(null, user); // Serialize the entire user object
   });
