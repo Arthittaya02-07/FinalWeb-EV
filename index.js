@@ -51,15 +51,15 @@ app.use("*", (req, res, next) => {
 app.set('view engine','ejs')
 
 app.get('/',indexController)
-app.get('/home',authMiddleware, homeController)
+app.get('/home', homeController)
 app.get('/LogIn',redirectIfAuth,loginController)
 app.get('/SignUp',redirectIfAuth,signUpController)
 app.post('/user/SignUp',redirectIfAuth,storeUserController)
 app.post('/user/LogIn',redirectIfAuth,loginUserController)
 app.get('/LogOut', logOutController)
 app.get('/verify/:key', verifyController)
-app.get('/Joinus',authMiddleware, joinUsController)
-app.get('/Profile',authMiddleware,profileController)
+app.get('/Joinus', joinUsController)
+app.get('/Profile',profileController)
 app.get('/Map',authMiddleware,mapController)
 
 

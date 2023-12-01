@@ -16,15 +16,15 @@ router.get(
     passport.authenticate('google', (err, user) => {
       if (err) {
         console.error(err);
-        return res.redirect('/LogIn'); // Redirect to login on error
+        return res.redirect('/SingUp'); // Redirect to login on error
       }
       if (!user) {
-        return res.redirect('/LogIn'); // Redirect to login if user not found
+        return res.redirect('/SingUp'); // Redirect to login if user not found
       }
       req.logIn(user, (err) => {
         if (err) {
           console.error(err);
-          return res.redirect('/LogIn'); // Redirect to login on error during login
+          return res.redirect('/SingUp'); // Redirect to login on error during login
         }
         console.log('Google authentication successful');
         return res.redirect('/');

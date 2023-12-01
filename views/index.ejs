@@ -1,4 +1,3 @@
-
 <html lang="en">
   <head>
     <title>Home -EV Charge Hub</title>
@@ -7,7 +6,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link href="/css/style.css" rel="stylesheet" />
+
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="./css/styleProfile.css" rel="stylesheet" />
+   
+
+
     <!-- Latest compiled and minified CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -20,159 +26,183 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&amp;display=swap"
-      rel="stylesheet"
-    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="./Images/logo.png" />
+
 
     <style>
-     @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
       
+      .textfind {
+      font-weight: bold;
+      font-size: 80px;
+      text-align: center;
+      background: linear-gradient(45deg, #E15CF2, #763DF2, #9CF2F2, #683FBF, #1E2D59);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     </style>
-    
   </head>
 
   <body>
     <!-- Full Desktop -->
-    <header class="position-relative d-none d-sm-block m-2">
-      <!-- <div class="container"> -->
-      <div class="position-absolute ps-4" style="top: 20px">
-        <a class="navbar-brand font-weight-bold" href="/index">
-          <img
-            src="Images/logo.png"
-            class="img-fluid"
-            style="max-width: 120px; max-height: 60px"
-          />
-        </a>
-      </div>
+    <div class="sticky-top">
+      <header class="position-relative d-none d-sm-block m-2">
+        <!-- <div class="container"> -->
+        <div class="position-absolute ps-4" style="top: 20px">
+          <a class="navbar-brand font-weight-bold" href="">
+            <img
+              src="./Images/logo.png"
+              class="img-fluid"
+              style="max-width: 120px; max-height: 60px"
+              href="/home.ejs"
+            />
+          </a>
+        </div>
 
-      <nav
-        class="navbar navbar-expand-sm navbar-light"
-        style="margin-left: 150px"
-      >
-        <button
-          class="navbar-toggler d-lg-none"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapseNavbarid"
-          aria-label="Toggle navigation"
+        <nav
+          class="navbar navbar-expand-sm navbar-light"
+          style="margin-left: 150px"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapseNavbarid">
-          <ul class="navbar-nav mt-2 d-flex justify-content-around">
-            <li class="nav-item active">
-              <a class="nav-link font-weight-bold" href="/index"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Join Us</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Service
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">How to</a></li>
-                <li><a class="dropdown-item" href="#">Booking</a></li>
-                <li><a class="dropdown-item" href="#">Car Model</a></li>
-                <li><a class="dropdown-item" href="#">Map</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end">
-            <% if (loggedIn) { %>
-              <li class="nav-item">
-                <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseNavbarid"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapseNavbarid">
+            <ul class="navbar-nav mt-2 d-flex justify-content-around">
+              <li class="nav-item active hoverelement">
+                <a class="nav-link font-weight-bold" href="./home"
+                  >Home <span class="sr-only">(current)</span></a
+                >
               </li>
-              <% } %>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="./Joinus"
+                  >Join Us</a
+                >
+              </li>
 
-              <% if (!loggedIn) {%>
-                <li class="nav-item">
-                  <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
-                </li>
-              <% } %>
-          </ul>
-        </div>
-      </nav>
+              <li class="nav-item dropdown hoverelement">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Service
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./Howto.html">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./Carmodel.html"
+                      >Car Model</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./MapBooking.html"
+                      >Map & Booking</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-      <nav class="position-relative">
-        <div class="d-flex justify-content-between">
-          <div class="">
-            <form
-              class="form-inline my-lg-0 justify-content-start"
-              style="margin-left: 150px"
-            >
-              <div class="input-group">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Search"
-                  style="
-                    border: 1px solid #ccc;
-                    border-radius: 20px;
-                    width: 300px;
-                  "
-                />
-                <div class="input-group-append">
-                  <button type="submit" class="btn my-2 my-sm-0">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
+              </li>
+            </ul>
           </div>
+          <div>
+            <ul
+              class="navbar-nav ml-auto mt-2 d-flex justify-content-end align-items-center"
+            >
+              <li class="nav-item btnSignUp">
+                <a class="img-fluid" href="./Profile"
+                  ><img
+                    src="./Images/profile/profile-user-purple.png"
+                    style="width: 36px"
+                /></a>
+              </li>
+              <li class="nav-item btnSignUp">
+                <a 
+                class="nav-link font-weight-bold" 
+                href="/SignUo"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item btnLogin">
+                <a
+                  class="nav-link font-weight-bold text-right"
+                  href="/LogIn"
+                  >Log In</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="position-relative">
+          <div class="d-flex justify-content-between">
+            <div class="">
+              <form
+                class="form-inline my-lg-0 justify-content-start"
+                style="margin-left: 150px"
+              >
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    style="
+                      border: 1px solid #ccc;
+                      border-radius: 20px;
+                      width: 300px;
+                    "
+                  />
+                  <div class="input-group-append">
+                    <button type="button" class="btn my-2 my-sm-0">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
 
-          <div class="position-absolute" style="right: 2%">
-            <div class="form-switch">
-              <input
-                type="checkbox"
-                class="form-check-input selector-button"
-                id="selector"
-              />
-              <label class="form-check-label" for="selector"></label>
+            <div class="position-absolute" style="right: 2%">
+              <div class="form-switch">
+                <input
+                  type="checkbox"
+                  class="form-check-input selector-button"
+                  id="selector"
+                />
+                <label class="form-check-label" for="selector"></label>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-
-    </header>
-
+        </nav>
+      </header>
+    </div>
     <!-- Small Desktop -->
     <header class="position-relative d-block d-sm-none">
       <div class="d-flex justify-content-between pt-3 pl-3 pr-3 p-4">
         <div class="">
-          <a class="navbar-brand font-weight-bold" href="/index">
+          <a class="navbar-brand font-weight-bold" href="./home">
             <img
-              src="/Images/logo.png"
+              src="./Images/logo.png"
               class="img-fluid"
               style="max-width: 120px; max-height: 60px"
             />
@@ -226,18 +256,26 @@
               </form>
             </div>
 
-             
             <ul class="navbar-nav d-flex justify-content-around p-3">
-              <li class="nav-item active">
-                <a class="nav-link font-weight-bold" href="/index"
+              <li class="nav-item btnSignUp">
+                <a class="img-fluid" href="./Profile"
+                  ><img
+                    src="./Images/profile/profile-user-purple.png"
+                    style="width: 36px"
+                /></a>
+              </li>
+              <li class="nav-item active hoverelement">
+                <a class="nav-link font-weight-bold" href="./home"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link font-weight-bold" href="/Joinus">Join Us</a>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="./Joinus.html"
+                  >Join Us</a
+                >
               </li>
 
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown hoverelement">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -248,34 +286,38 @@
                   Service
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">How to</a></li>
-                  <li><a class="dropdown-item" href="#">Booking</a></li>
-                  <li><a class="dropdown-item" href="#">Car Model</a></li>
-                  <li><a class="dropdown-item" href="#">Map</a></li>
+                  <li>
+                    <a class="dropdown-item" href="./Howto.html">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./Carmodel.html"
+                      >Car Model</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./MapBooking.html"
+                      >Map & Booking</a
+                    >
+                  </li>
                 </ul>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link font-weight-bold" href="#">Contact</a>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
               </li>
 
-              <% if (loggedIn) { %>
-                <li class="nav-item">
-                  <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
-                </li>
-                <% } %>
-
-                <% if (!loggedIn) {%>
-                  <li class="nav-item">
-                    <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
-                  </li>
-                <% } %>
-                
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="./SignUp.html"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="./LogIn.html"
+                  >Log In</a
+                >
+              </li>
             </ul>
-           
+
             <div class="" style="padding: 1rem">
               <div class="form-switch">
                 <input
@@ -291,98 +333,180 @@
       </div>
     </header>
 
-    <!-- content -->
-    <div class="container-fluid">
-      <div class="row d-flex align-content-center" style="height: 500px">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <h1 class="display-2 text-center">Light / Dark Mode</h1>
-          <h5 class="text-center mt-5"></h5>
-        </div>
-      </div>
+    <div class="container-fluid backgroundAnimation">
+      
+      <img src="./Images/homepara/Home_0001_moon.png" id="moon">
+      <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;">WELCOME, USER</h1>
+     <img src="./Images/homepara/Home_0006_star.png" id="star">
+     <img src="./Images/homepara/Home_0007_cloud.png" id="cloud">
+     <img src="./Images/homepara/Home_0005_mountain.png" id="mountain">
+     <img src="./Images/homepara/Home_0004_city2.png" id="city2">
+     <img src="./Images/homepara/Home_0003_city1.png" id="city1">
+     <img src="./Images/homepara/Home_0002_road.png" id="road">
+     <img src="./Images/homepara/Home_0000_car.png" id="car" >
     </div>
-    <!-- content -->
+
+    <h1 class="textfind" style="font-weight: bold; font-size: 80px; text-align: center;">Find a charging station near you</h1>
+
+    <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid maphome">
+      <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
+    </div>
+
+      <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carvideo">
+        <iframe
+          width="1454"
+          height="400"
+          src="https://www.youtube.com/embed/bE_guNKXxlM?si=YQi7mh-vr_hDd6X7&controls=0&start=7&autoplay=1&mute=1" 
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+          style="border: none;"
+        ></iframe>
+      </div>
+      </div>
+      
+      
+
+
+    <div data-aos="fade-up" data-aos-duration="1000">   
+    <div class="container-fluid">
+      <div class="row g-0 position-relative justify-content-center mt-5">
+        <!-- รูปทางซ้าย -->
+        <div class="col-md-3 m-auto text-center">
+          <img src="./Images/save-the-earth.png" class="img-fluid wave" style="width: 300px;">
+        </div>
+    
+        <div class="col-md-6">
+          <!-- แถวที่ 1 -->
+          <div class="row counting mb-3">
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">709.6</div>
+              <h4 style="color: grey; font-weight: 500;">Reduce carbon emissions by 709.6 tons</h4>
+            </div>
+        
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">20.6</div>
+              <h4 style="color: grey; font-weight: 500;">Cut greenhouse gas emissions by using electric cars</h4>
+            </div>
+          </div>
+         
+          <!-- แถวที่ 2 -->
+          <div class="row counting">
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">7.1</div>
+              <h4 style="color: grey; font-weight: 500;">Electric cars have driven a total of 7.1 million km</h4>
+            </div>
+        
+            <div class="col-md-6 p-md-2 mb-3 wave-text">  
+              <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">20</div>
+              <h4 style="color: grey; font-weight: 500;">EVs emit 20% less heat and can make cities cooler</h4>
+            </div>
+          </div>
+        </div>
+  </div> 
+
+
+
+
+    <div class="go-to-top">
+      <a href="#">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+  
 
     <!-- footer -->
-
-    <div class="container-fluid">
-      <div class="d-flex flex-column justify-content-center">
-        <h3 class="text-center">Want to partner with us?</h3>
-        <p class="text-center"></p>
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-6 col-md-3">
-            <button
-              class="btn btn-block btn-outline-primary"
-              style="border-radius: 20px; width: 100%; margin: 0 auto"
-            >
-              Get Started
-            </button>
-          </div>
+    <div class="container-fluid" id="footer">
+      <h3 class="text-center pt-5" style="color: #683fbf">
+        Want to partner with us?
+      </h3>
+      <p class="text-center"></p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3">
+          <a
+            class="btn btn-block btn-outline-primary"
+            style="border-radius: 20px; width: 100%; margin: 0 auto"
+            href="./Joinus"
+          >
+            Get Started
+          </a>
         </div>
-  
-        <footer>
-          <div class="container-fluid text-center mt-5">
-    
-            <ul class="list-unstyled social-media-icons text-center mt-2 list-unstyled">
-              <li class="list-inline-item">
-                <a href="#" class="social-media-icon">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="social-media-icon">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="social-media-icon">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-            </ul>
-  
-            <ul class="list-unstyled footer-menu">
-              <li><a href="/index">Home</a></li>
-              <li><a href="/Joinus">Join Us</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms Of Use</a></li>
-              <li><a href="#">Help</a></li>
-            </ul>
-            
-            <hr>
-            <p class="copyright" style="color: #ffff; font-size: 12px;">
-              &copy; 2023 <a href="/index">Ev Charge Hub.</a>  All rights reserved.
-            </p>
-            
-          </div>
-        </footer>
       </div>
+
+      <footer>
+        <div class="container-fluid text-center mt-5">
+          <ul
+            class="list-unstyled social-media-icons text-center mt-2 list-unstyled"
+          >
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled footer-menu">
+            <li><a href="./home">Home</a></li>
+            <li><a href="#">Join Us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+
+          <hr style="color: #683fbf" />
+          <p class="copyright" style="color: #683fbf; font-size: 12px">
+            &copy; 2023 <a href="./home">Ev Charge Hub.</a> All rights
+            reserved.
+          </p>
+        </div>
+      </footer>
     </div>
 
-     <!-- dark mood -->
+    <!-- dark mood -->
     <script>
       $(document).ready(function () {
+        // กำหนดค่าเริ่มต้น
+        $("body").addClass("bg-black");
+        $("nav").removeClass("navbar-dark");
+        $("header").removeClass("navbar-dark");
+        $(".custom-control-label").removeClass("text-white");
+        $("h1").removeClass("text-white");
+        $("h5").removeClass("text-white");
+        $(".input-group-append .btn i").css("color", "#763DF2");
+
         $(".selector-button").change(function () {
+          // สลับสีพื้นหลัง
           $("body").toggleClass("bg-black");
           // ไปทำเป็นtransparent
-          $("nav").toggleClass("navbar-dark ");
+          $("nav").toggleClass("navbar-dark");
           $("header").toggleClass("navbar-dark");
-
-          $(".custom-control-label").toggleClass("text-white");
-          $("h1").toggleClass("text-white");
-          $("h5").toggleClass("text-white");
 
           if ($(this).is(":checked")) {
             // เปลี่ยนสีไอคอนเป็นสีขาว
-            $(".input-group-append .btn i").css("color", "#fff");
+            $(".input-group-append .btn i").css("color", "#763DF2");
           } else {
             // เปลี่ยนสีไอคอนเป็นสีปกติ
-            $(".input-group-append .btn i").css("color", "#000");
+            $(".input-group-append .btn i").css("color", "#763DF2");
           }
         });
       });
     </script>
 
+    <!-- effect navbar -->
     <script>
       $(document).ready(function () {
         $("#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4").click(function () {
@@ -391,6 +515,53 @@
       });
     </script>
 
-    <!-- dark mood -->
+    <!-- nav bar sticky -->
+    <script>
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          document.querySelector(".sticky-top").style.top = "-120px";
+        } else {
+          document.querySelector(".sticky-top").style.top = "0";
+        }
+      };
+    </script>
+
+    <!-- change pic -->
+    <script src="./js/style.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+    <!-- animation -->
+ <script>
+  let moon = document.getElementById("moon")
+  let city1 = document.getElementById("city1")
+  let city2 = document.getElementById("city2")
+  let car = document.getElementById("car")
+  let welcome = document.getElementById("welcome")
+  window.addEventListener("scroll", function () {
+    let value = window.scrollY;
+    city1.style.marginLeft = value * 0.25 + "px";
+    city2.style.marginLeft = value * -0.5 + 'px';
+    moon.style.marginLeft = value * 1.5 + "px";
+    car.style.marginLeft = value * -1 + "px";
+    welcome.style.marginTop = value * 0.5 + "px";
+  });
+</script>
+<!-- counting -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+ $(".number").counterUp({delay:10,time:1000});
+  });
+</script>
+
   </body>
 </html>
