@@ -68,7 +68,7 @@ app.post('/user/LogIn',redirectIfAuth,loginUserController)
 app.get('/LogOut', logOutController)
 app.get('/verify/:key', verifyController)
 app.get('/Joinus',authMiddleware, joinUsController)
-app.get('/Profile',authMiddleware,profileController)
+app.get('/Profile',authMiddleware, profileController)
 app.get('/Map',authMiddleware,mapController)
 app.use('/auth',redirectIfAuth,require('./auth'))
 
