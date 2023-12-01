@@ -21,27 +21,6 @@ module.exports = async (req, res) => {
         })
 }
 
-// const User = require('../models/User')
-// const google = require('../models/User')
 
-// module.exports = async (req, res) => {
-
-// if (google) {
-
-//     let UserData = await google.findById(req.session.userId)
-
-//         res.render('profile', {
-//             UserData
-//         })
-
-// }
-// if (user) {
-//     let UserData = await User.findById(req.session.userId)
-
-//         res.render('profile', {
-//             UserData
-//         })
-// }
-// }
 
    

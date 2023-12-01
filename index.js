@@ -2,13 +2,17 @@ const express = require ('express')
 const app = express()
 const ejs = require('ejs')
 const mongoose = require('mongoose')
-const expressSession = require('express-session')
+const expressSession = require('express-session') 
 const flash = require('connect-flash')
+const passport = require('passport')
 // const fetch = require('node-fetch')
 
 
 //MongoDB Connect
-mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/?retryWrites=true&w=majority')
+// mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/')
+
+
 
 global.loggedIn = null
 
@@ -24,18 +28,23 @@ const verifyController = require('./controllers/verifyController')
 const joinUsController = require('./controllers/joinUsController')
 const profileController = require('./controllers/profileController')
 const mapController = require('./controllers/mapController')
+// const passportController = require('./controllers/passportController')
 
 // fetch('https://api.example.com/data')
 //   .then(response => response.json())
 //   .then(data => console.log(data))
 //   .catch(error => console.error('Error:', error));
 
-
+require('./controllers/passportController')(passport)
 
 //Middleware
 const redirectIfAuth = require('./middleware/redirectIfAuth')
-const authMiddleware = require('./middleware/authMiddleware');
+const authMiddleware = require('./middleware/authMiddleware')
+const authgoogle = require('./auth')
 
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static('public'))
 app.use(express.json())
@@ -61,6 +70,7 @@ app.get('/verify/:key', verifyController)
 app.get('/Joinus', joinUsController)
 app.get('/Profile',profileController)
 app.get('/Map',authMiddleware,mapController)
+app.use('/auth',redirectIfAuth,require('./auth'))
 
 
 
