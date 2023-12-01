@@ -81,7 +81,7 @@
               <a class="nav-link font-weight-bold" href="/Joinus">Join Us</a>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown hoverelement">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -92,16 +92,22 @@
                 Service
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">How to</a></li>
-                <li><a class="dropdown-item" href="#">Booking</a></li>
-                <li><a class="dropdown-item" href="#">Car Model</a></li>
-                <li><a class="dropdown-item" href="/Map">Map</a></li>
-                <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                <li>
+                  <a class="dropdown-item" href="#howToContainer">How to</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#carModelContainer">Car Model</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./MapBooking"
+                    >Map & Booking</a
+                  >
+                </li>
               </ul>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Contact</a>
+            <li class="nav-item hoverelement">
+              <a class="nav-link font-weight-bold" href="#footer">Contact</a>
             </li>
           </ul>
         </div>
@@ -238,7 +244,7 @@
                 <a class="nav-link font-weight-bold" href="/Joinus">Join Us</a>
               </li>
 
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown hoverelement">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -249,15 +255,22 @@
                   Service
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">How to</a></li>
-                  <li><a class="dropdown-item" href="#">Booking</a></li>
-                  <li><a class="dropdown-item" href="#">Car Model</a></li>
-                  <li><a class="dropdown-item" href="/Map">Map</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#howToContainer">How to</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#carModelContainer">Car Model</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./MapBooking"
+                      >Map & Booking</a
+                    >
+                  </li>
                 </ul>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link font-weight-bold" href="#">Contact</a>
+  
+              <li class="nav-item hoverelement">
+                <a class="nav-link font-weight-bold" href="#footer">Contact</a>
               </li>
 
               <% if (loggedIn) { %>
@@ -294,6 +307,7 @@
       </div>
     </header>
 
+<<<<<<< HEAD
     <!-- content -->
     <!-- <div class="container-fluid">
       <div class="row d-flex align-content-center" style="height: 500px">
@@ -304,6 +318,9 @@
       </div>
     </div> -->
 
+=======
+    
+>>>>>>> d402747fe06f88e49594f2896faf26d734e405d6
     <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
         <div class="col-md-6 px-0">
           <h1 class="display-4 fst-italic">
@@ -315,66 +332,204 @@
         </div>
       </div>
     <!-- content -->
+    
+    <div class="container-fluid backgroundAnimation">
+      
+      <img src="./Images/homepara/Home_0001_moon.png" id="moon">
+      <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;">WELCOME, USER</h1>
+     <img src="./Images/homepara/Home_0006_star.png" id="star">
+     <img src="./Images/homepara/Home_0007_cloud.png" id="cloud">
+     <img src="./Images/homepara/Home_0005_mountain.png" id="mountain">
+     <img src="./Images/homepara/Home_0004_city2.png" id="city2">
+     <img src="./Images/homepara/Home_0003_city1.png" id="city1">
+     <img src="./Images/homepara/Home_0002_road.png" id="road">
+     <img src="./Images/homepara/Home_0000_car.png" id="car" >
+    </div>
 
-
-
-    <!-- footer -->
-
-    <div class="container-fluid">
-      <div class="d-flex flex-column justify-content-center">
-        <h3 class="text-center">Want to partner with us?</h3>
-        <p class="text-center"></p>
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid introev m-auto mt-5 ">
         <div class="row justify-content-center">
-          <div class="col-12 col-sm-6 col-md-3">
-            <button
-              class="btn btn-block btn-outline-primary"
-              style="border-radius: 20px; width: 100%; margin: 0 auto"
-            >
-              Get Started
-            </button>
+          <div class="col-md-4">
+            <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">What does Evolt do?</h1>
+            <h3 style="font-weight: 500; color: grey;">We are a full service provider of electric vehicle charging stations</h3>
+          </div>
+          <div class="col-md-3">
+            <div class="image-container align-items-center mx-auto mt-5">
+              <img src="./Images/EV Image/3407.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+              <div class="image-container align-items-center mx-auto ">
+              <img src="./Images/EV Image/3d-electric-car-with-charged-battery.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            <div class="image-container align-items-center mx-auto">
+              <img src="./Images/EV Image/full-shot-man-charging-electric-car.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
           </div>
         </div>
-  
-        <footer>
-          <div class="container-fluid text-center mt-5">
+      </div>
+    </div>
     
-            <ul class="list-unstyled social-media-icons text-center mt-2 list-unstyled">
-              <li class="list-inline-item">
-                <a href="#" class="social-media-icon">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="social-media-icon">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="social-media-icon">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-            </ul>
-  
-            <ul class="list-unstyled footer-menu">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/Joinus">Join Us</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms Of Use</a></li>
-              <li><a href="#">Help</a></li>
-            </ul>
-            
-            <hr>
-            <p class="copyright" style="color: #ffff; font-size: 12px;">
-              &copy; 2023 <a href="/home">Ev Charge Hub.</a>  All rights reserved.
-            </p>
-            
-          </div>
-        </footer>
+    <img src="./Images/radius.png" style="position: absolute; right: 65%; top: 1000px; width: 60%; z-index: -1;">
+
+    
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="row justify-content-center mt-5 mx-auto">
+        <div class="col-md-4 justify-content-center position-relative">
+        </div>
+      <div class="col-md-6  text-md-end mb-3">
+        <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">Find a charging station near you</h1>
       </div>
     </div>
 
-    <!-- footer -->
+    <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid maphome px-0">
+      <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
+    </div>
+  </div>
+
+  <div id="howToContainer" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid HowTo justify-content-center mt-5">
+      <div class="row justify-content-center">
+        <!-- คอลัมน์แรก -->
+        <div class="col-md-6 mb-3">
+          <div class="card">
+            <div class="card-body d-flex justify-content-center">
+              <div class="col-md-6 mb-3 ">
+                <!-- รูป qrcodevideo -->
+                <img src="./Images/EV Image/qrcodevideo.png" class="img-fluid" style="width: 100%; border-radius: 20px;">
+              </div>
+              <div class="col-md-6 mb-3">
+                <!-- h1 -->
+                <h1 class="typing-text" style="font-weight: bold; color: #763DF2; font-size: 80px;"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- คอลัมน์ที่สอง -->
+        <div class="col-md-6 mb-3">
+          <img src="./Images/EV Image/ar.jpg" class="img-fluid" style="border-radius: 30px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carvideo mt-5 px-0">
+        <video width="100%" height="auto" autoplay muted loop controls>
+          <source src="./Images/Volvo S90 Recharge_ Luxury is not a thing.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    
+    <div id="carModelContainer" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carmodel mt-5 mb-3">
+        <div class="carmodel--left">
+        <div class="text">
+          <div class="carmodel__title">Car<br />Model</div>
+            </div>
+        </div>
+        <div class="carmodel--right">
+        <div class="slider">
+          <div class="slider__background--back"></div>
+          <div class="slider__background--front"></div>
+          <div class="slider__details">
+            <div class="slider__details--name">EX30</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#1" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+                <div class="slider__details">
+            <div class="slider__details--name">C40 Recharge</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#2" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+          <div class="slider__details">
+            <div class="slider__details--name">XC40 Recharge</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#3" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+                <div class="slider__gallery">
+            <img class="slider__image img-fluid" src="./Images/carmodel/electric-car-ex-30-callout-4x3-removebg-preview.png">
+            <img class="slider__image img-fluid" src="./Images/carmodel/featurecarc401v-removebg-preview.png">
+                    <img class="slider__image img-fluid" src="./Images/carmodel/my23_xc40-bev_skw034_profile_bev1_1920x1440-removebg-preview.png">
+                </div>
+          <!-- <ul class="slider__navigation">
+            <li class="slider__navigation--dot"></li>
+            <li class="slider__navigation--dot"></li>
+            <li class="slider__navigation--dot"></li>
+                </ul> -->
+            </div>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="go-to-top">
+      <a href="#">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+  
+ <!-- footer -->
+ <div class="container-fluid" id="footer">
+  <h3 class="text-center pt-5" style="color: #683fbf">
+    Want to partner with us?
+  </h3>
+  <p class="text-center"></p>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 col-md-3">
+      <a
+        class="btn btn-block btn-outline-primary"
+        style="border-radius: 20px; width: 100%; margin: 0 auto"
+        href="./Joinus"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container-fluid text-center mt-5">
+      <ul
+        class="list-unstyled social-media-icons text-center mt-2 list-unstyled"
+      >
+        <li class="list-inline-item">
+          <a href="#" class="social-media-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="social-media-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="social-media-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="list-unstyled footer-menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="./Joinus">Join Us</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms Of Use</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+
+      <hr style="color: #683fbf" />
+      <p class="copyright" style="color: #683fbf; font-size: 12px">
+        &copy; 2023 <a href="./home">Ev Charge Hub.</a> All rights
+        reserved.
+      </p>
+    </div>
+  </footer>
+</div>
+
 
      <!-- dark mood -->
     <script>

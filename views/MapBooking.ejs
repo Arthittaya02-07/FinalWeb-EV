@@ -54,11 +54,12 @@
       <header class="position-relative d-none d-sm-block m-2">
         <!-- <div class="container"> -->
         <div class="position-absolute ps-4" style="top: 20px">
-          <a class="navbar-brand font-weight-bold" href="/home">
+          <a class="navbar-brand font-weight-bold" href="">
             <img
-              src="/Images/logo.png"
+              src="./Images/logo.png"
               class="img-fluid"
               style="max-width: 120px; max-height: 60px"
+              href="/home"
             />
           </a>
         </div>
@@ -79,12 +80,12 @@
           <div class="collapse navbar-collapse" id="collapseNavbarid">
             <ul class="navbar-nav mt-2 d-flex justify-content-around">
               <li class="nav-item active hoverelement">
-                <a class="nav-link font-weight-bold" href="/home"
+                <a class="nav-link font-weight-bold" href="./home"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/Joinus"
+                <a class="nav-link font-weight-bold" href="./Joinus"
                   >Join Us</a
                 >
               </li>
@@ -101,14 +102,16 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/Howto">How to</a>
+                    <a class="dropdown-item" href="./home#howToContainer">How to</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/Carmodel"
-                      >Car Model</a
+                    <a class="dropdown-item" href="./home#carModelContainer">Car Model</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./MapBooking"
+                      >Map & Booking</a
                     >
                   </li>
-                  <li><a class="dropdown-item" href="/MapBooking">Map & Booking</a></li>
                 </ul>
               </li>
 
@@ -118,14 +121,20 @@
             </ul>
           </div>
           <div>
-            <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end align-items-center">
+            <ul
+              class="navbar-nav ml-auto mt-2 d-flex justify-content-end align-items-center"
+            >
               <li class="nav-item btnSignUp">
-                <a class="img-fluid" href="/Profile"
-                  ><img src="./Images/profile/profile-user-purple.png" style="width: 36px; "></a
-                >
+                <a class="img-fluid" href="./Profile"
+                  ><img
+                    src="./Images/profile/profile-user-purple.png"
+                    style="width: 36px"
+                /></a>
               </li>
               <li class="nav-item btnSignUp">
-                <a class="nav-link font-weight-bold" href="/SignUp"
+                <a 
+                class="nav-link font-weight-bold" 
+                href="/SignUp"
                   >Sign Up</a
                 >
               </li>
@@ -184,9 +193,9 @@
     <header class="position-relative d-block d-sm-none">
       <div class="d-flex justify-content-between pt-3 pl-3 pr-3 p-4">
         <div class="">
-          <a class="navbar-brand font-weight-bold" href="/home">
+          <a class="navbar-brand font-weight-bold" href="./home">
             <img
-              src="/Images/logo.png"
+              src="./Images/logo.png"
               class="img-fluid"
               style="max-width: 120px; max-height: 60px"
             />
@@ -242,17 +251,19 @@
 
             <ul class="navbar-nav d-flex justify-content-around p-3">
               <li class="nav-item btnSignUp">
-                <a class="img-fluid" href="/Profile"
-                  ><img src="./Images/profile/profile-user-purple.png" style="width: 36px; "></a
-                >
+                <a class="img-fluid" href="./Profile"
+                  ><img
+                    src="./Images/profile/profile-user-purple.png"
+                    style="width: 36px"
+                /></a>
               </li>
               <li class="nav-item active hoverelement">
-                <a class="nav-link font-weight-bold" href="/home"
+                <a class="nav-link font-weight-bold" href="./home"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/Joinus"
+                <a class="nav-link font-weight-bold" href="./Joinus"
                   >Join Us</a
                 >
               </li>
@@ -269,28 +280,30 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/Howto">How to</a>
+                    <a class="dropdown-item" href="./home#howToContainer">How to</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/Carmodel"
-                      >Car Model</a
+                    <a class="dropdown-item" href="./home#carModelContainer">Car Model</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./MapBooking"
+                      >Map & Booking</a
                     >
                   </li>
-                  <li><a class="dropdown-item" href="/MapBooking">Map & Booking</a></li>
                 </ul>
               </li>
 
               <li class="nav-item hoverelement">
                 <a class="nav-link font-weight-bold" href="#footer">Contact</a>
               </li>
-              
+
               <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/SignUp"
+                <a class="nav-link font-weight-bold" href="./SignUp"
                   >Sign Up</a
                 >
               </li>
               <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/LogIn"
+                <a class="nav-link font-weight-bold" href="./LogIn"
                   >Log In</a
                 >
               </li>
@@ -310,6 +323,7 @@
         </div>
       </div>
     </header>
+
 
     
     <div class="container-fluid maptext pt-5 pb-5 mb-5">
@@ -473,17 +487,11 @@
           <a
             class="btn btn-block btn-outline-primary"
             style="border-radius: 20px; width: 100%; margin: 0 auto"
-            href="/Joinus"
+            href="./Joinus"
           >
             Get Started
           </a>
         </div>
-      </div>
-
-      <div class="go-to-top">
-        <a href="#">
-          <i class="fas fa-arrow-up"></i>
-        </a>
       </div>
 
       <footer>
@@ -510,7 +518,7 @@
 
           <ul class="list-unstyled footer-menu">
             <li><a href="/home">Home</a></li>
-            <li><a href="#">Join Us</a></li>
+            <li><a href="./Joinus">Join Us</a></li>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Terms Of Use</a></li>
             <li><a href="#">Help</a></li>
@@ -518,7 +526,7 @@
 
           <hr style="color: #683fbf" />
           <p class="copyright" style="color: #683fbf; font-size: 12px">
-            &copy; 2023 <a href="/home">Ev Charge Hub.</a> All rights
+            &copy; 2023 <a href="./home">Ev Charge Hub.</a> All rights
             reserved.
           </p>
         </div>
