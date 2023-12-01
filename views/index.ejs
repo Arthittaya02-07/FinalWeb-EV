@@ -415,16 +415,52 @@
       </div>
     </div>
     
+    
     <div data-aos="fade-up" data-aos-duration="1000">
-      <div class="container-fluid carmodel mt-5 px-0">
-        
+      <div class="container-fluid carmodel mt-5 mb-3">
+        <div class="carmodel--left">
+        <div class="text">
+          <div class="carmodel__title">Car<br />Model</div>
+            </div>
+        </div>
+        <div class="carmodel--right">
+        <div class="slider">
+          <div class="slider__background--back"></div>
+          <div class="slider__background--front"></div>
+          <div class="slider__details">
+            <div class="slider__details--name">EX30</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#1" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+                <div class="slider__details">
+            <div class="slider__details--name">C40 Recharge</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#2" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+          <div class="slider__details">
+            <div class="slider__details--name">XC40 Recharge</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#3" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+                <div class="slider__gallery">
+            <img class="slider__image" src="./Images/carmodel/electric-car-ex-30-callout-4x3-removebg-preview.png">
+            <img class="slider__image" src="./Images/carmodel/featurecarc401v-removebg-preview.png">
+                    <img class="slider__image" src="./Images/carmodel/my23_xc40-bev_skw034_profile_bev1_1920x1440-removebg-preview.png">
+                </div>
+          <ul class="slider__navigation">
+            <li class="slider__navigation--dot"></li>
+            <li class="slider__navigation--dot"></li>
+                    <li class="slider__navigation--dot"></li>
+                </ul>
+            </div>
       </div>
+    </div>
     </div>
 
     
     <div data-aos="fade-up" data-aos-duration="1000">  
-    <div class="container-fluid ">
-      <div class="row g-0 position-relative justify-content-center mt-5">
+    <div class="container-fluid mt-5">
+      <div class="row g-0 position-relative justify-content-center ">
         <!-- รูปทางซ้าย -->
         <div class="col-md-3 m-auto text-center">
           <img src="./Images/save-the-earth.png" class="img-fluid wave" style="width: 300px;">
@@ -694,6 +730,40 @@ function setTyper(element, words) {
   }
 }
 
+</script>
+
+<!-- car card -->
+<script>
+  var count = 0;
+const carmodelAnimations = () => {
+	// workaround for browsers throttling setInterval/setTimeout on inactive tabs
+	// https://stackoverflow.com/questions/5927284/how-can-i-make-setinterval-also-work-when-a-tab-is-inactive-in-chrome
+  	setTimeout(carmodelAnimations, 6000);
+    const carmodelImage = document.querySelectorAll('.slider__image'),
+          carmodelDetails = document.querySelectorAll('.slider__details'),
+          carmodelDetailsBackground = document.querySelector('.slider__background--front'),
+          carmodelNavDot = document.querySelectorAll('.slider__navigation--dot');
+    for (var i=0; i<carmodelImage.length; i++) {
+        carmodelImage[i].setAttribute('style', 'opacity: 0');
+    }
+    for (var i=0; i<carmodelDetails.length; i++) {
+        carmodelDetails[i].setAttribute('style', 'opacity: 0');
+    }
+    for (i=0; i<carmodelNavDot.length; i++) {
+		carmodelNavDot[i].setAttribute('style', 'background: #ed1319');
+	} 
+    count++;
+    if (count > carmodelImage.length) {
+        count = 1;
+   	}
+    carmodelImage[count-1].setAttribute('style', 'opacity: 1');
+    carmodelImage[count-1].style.animation = 'slideInLeft 6s infinite';
+    carmodelDetails[count-1].setAttribute('style', 'opacity: 1');
+    carmodelDetails[count-1].style.animation = 'fadeIn .5s forwards, fadeOut .5s 4.5s forwards';
+    carmodelDetailsBackground.style.animation = 'slideInAndOut 6s infinite forwards';
+    carmodelNavDot[count-1].setAttribute('style', 'background: #FEDC17');
+}
+carmodelAnimations();
 </script>
 
   </body>
