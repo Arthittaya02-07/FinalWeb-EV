@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Partner = require('../models/partnerBranch');
+const Partner = require('../models/partnerBranch'); // แก้ไข path ตามโครงสร้างโปรเจกต์ของคุณ
 
+// เส้นทางสำหรับบันทึกข้อมูล Partner
 module.exports = async (req, res) => {
     const {
         region,
@@ -12,7 +13,7 @@ module.exports = async (req, res) => {
         parkingSpace
     } = req.body;
     const userId = req.session.userId;
-    
+
     console.log('Received data:', {
         userId,
         region,
@@ -27,7 +28,7 @@ module.exports = async (req, res) => {
         const partner = new Partner({
             userId,
             zone: region, // หากมีการแปลง region, province, district เป็น zone และอื่นๆ ตามต้องการ
-            province,
+            province:province,
             typeBusiness: businessType,
             typeCarpark: parkingType,
             parkingSpaces: parkingSpace
@@ -39,15 +40,4 @@ module.exports = async (req, res) => {
         console.error('เกิดข้อผิดพลาด:', error);
         res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
-    res.render('Joinus')
 };
-
-// module.exports = (req,res) => {
-
-
-
-
-
-
-//     res.render('Joinus')
-//    }

@@ -28,6 +28,7 @@ const verifyController = require('./controllers/verifyController')
 const joinUsController = require('./controllers/joinUsController')
 const profileController = require('./controllers/profileController')
 const mapController = require('./controllers/mapController')
+const partnerController = require('./controllers/partnerController')
 // const passportController = require('./controllers/passportController')
 
 // fetch('https://api.example.com/data')
@@ -67,9 +68,11 @@ app.post('/user/SignUp',redirectIfAuth,storeUserController)
 app.post('/user/LogIn',redirectIfAuth,loginUserController)
 app.get('/LogOut', logOutController)
 app.get('/verify/:key', verifyController)
-app.get('/Joinus', joinUsController)
+app.get('/Joinus',authMiddleware, joinUsController)
 app.get('/Profile',profileController)
 app.get('/Mapbooking',mapController)
+// app.post('/Joinus',authMiddleware,partnerController)
+
 app.use('/auth',redirectIfAuth,require('./auth'))
 
 
