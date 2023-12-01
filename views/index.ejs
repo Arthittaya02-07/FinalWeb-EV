@@ -367,28 +367,61 @@
     
     <div data-aos="fade-up" data-aos-duration="1000">
       <div class="row justify-content-center mt-5 mx-auto">
-        <div class="col-md-4 justify-content-center position-relative">        </div>
+        <div class="col-md-4 justify-content-center position-relative">
+        </div>
       <div class="col-md-6  text-md-end mb-3">
         <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">Find a charging station near you</h1>
       </div>
     </div>
-    <div class="container-fluid maphome">
+
+    <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid maphome px-0">
       <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
     </div>
-    
+  </div>
+
+  <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid HowTo justify-content-center mt-5">
+      <div class="row justify-content-center">
+        <!-- คอลัมน์แรก -->
+        <div class="col-md-6 mb-3">
+          <div class="card">
+            <div class="card-body d-flex justify-content-center">
+              <div class="col-md-6 mb-3">
+                <!-- รูป qrcodevideo -->
+                <img src="./Images/EV Image/qrcodevideo.png" class="img-fluid" style="width: 100%; border-radius: 20px;">
+              </div>
+              <div class="col-md-6 mb-3">
+                <!-- h1 -->
+                <h1 class="typing-text" style="font-weight: bold; color: #763DF2; font-size: 85px;"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- คอลัมน์ที่สอง -->
+        <div class="col-md-6 mb-3">
+          <img src="./Images/EV Image/ar.jpg" class="img-fluid" style="border-radius: 30px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
     <div data-aos="fade-up" data-aos-duration="1000">
-      <div class="container-fluid carvideo mt-5">
+      <div class="container-fluid carvideo mt-5 px-0">
         <video width="100%" height="auto" autoplay muted loop controls>
           <source src="./Images/Volvo S90 Recharge_ Luxury is not a thing.mp4" type="video/mp4">
         </video>
       </div>
     </div>
     
-    
-      
-      
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carmodel mt-5 px-0">
+        
+      </div>
+    </div>
 
-    <img src="./Images/radius.png" style="position: absolute; left: 65%; top: 2700px; width: 60%; z-index: -1;">
+    
     <div data-aos="fade-up" data-aos-duration="1000">  
     <div class="container-fluid ">
       <div class="row g-0 position-relative justify-content-center mt-5">
@@ -396,7 +429,8 @@
         <div class="col-md-3 m-auto text-center">
           <img src="./Images/save-the-earth.png" class="img-fluid wave" style="width: 300px;">
         </div>
-    
+        <img src="./Images/radius.png" style="position: absolute; left: 60%;  width: 40%; z-index: -1;">
+
         <div class="col-md-6">
           <!-- แถวที่ 1 -->
           <div class="row counting mb-3">
@@ -588,6 +622,77 @@
 $(".image-container img").mouseleave(function () {
   $(this).parent().removeClass("hover");
 });
+
+</script>
+
+<!-- typing -->
+<script>
+  const text = document.querySelector('.typing-text');
+
+// make a words array
+const words = [
+  "HOW TO USE",
+];
+
+// start typing effect
+setTyper(text, words);
+function setTyper(element, words) {
+
+  const LETTER_TYPE_DELAY = 75;
+  const WORD_STAY_DELAY = 2000;
+
+  const DIRECTION_FORWARDS = 0;
+  const DIRECTION_BACKWARDS = 1;
+
+  var direction = DIRECTION_FORWARDS;
+  var wordIndex = 0;
+  var letterIndex = 0;
+
+  var wordTypeInterval;
+
+  startTyping();
+
+  function startTyping() {
+    wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
+  }
+
+  function typeLetter() {
+    const word = words[wordIndex];
+
+    if (direction == DIRECTION_FORWARDS) {
+      letterIndex++;
+
+      if (letterIndex == word.length) {
+        direction = DIRECTION_BACKWARDS;
+        clearInterval(wordTypeInterval);
+        setTimeout(startTyping, WORD_STAY_DELAY);
+      }
+
+    } else if (direction == DIRECTION_BACKWARDS) {
+      letterIndex--;
+
+      if (letterIndex == 0) {
+        nextWord();
+      }
+    }
+
+    const textToType = word.substring(0, letterIndex);
+
+    element.textContent = textToType;
+  }
+
+  function nextWord() {
+
+    letterIndex = 0;
+    direction = DIRECTION_FORWARDS;
+    wordIndex++;
+
+    if (wordIndex == words.length) {
+      wordIndex = 0;
+    }
+
+  }
+}
 
 </script>
 

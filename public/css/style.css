@@ -586,9 +586,20 @@ d::before {
   opacity: 1;
 }
 
+/* typing text */
+.typing-text::after {
+  content: "|";
+  animation: blink ease 1s infinite;
+}
 
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  } 50% {
+    opacity: 1;
+  }
+}
 
-
-
+/* card car */
 
 
