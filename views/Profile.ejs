@@ -262,16 +262,28 @@
                 >
                   Service
                 </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="/Howto">How to</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/Carmodel"
-                      >Car Model</a
-                    >
-                  </li>
-                  <li><a class="dropdown-item" href="/MapBooking">Map & Booking</a></li>
+                <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end">
+                  <% if (loggedIn) { %>
+                    <li class="nav-item btnSignUp">
+                      <a class="img-fluid" href="./Profile"
+                        ><img
+                          src="./Images/profile/profile-user-purple.png"
+                          style="width: 36px"
+                      /></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
+                    </li>
+                    <% } %>
+      
+                    <% if (!loggedIn) {%>
+                      <li class="nav-item">
+                        <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
+                      </li>
+                    <% } %>
                 </ul>
               </li>
 

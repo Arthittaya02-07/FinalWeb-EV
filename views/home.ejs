@@ -108,6 +108,13 @@
         <div>
           <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end">
             <% if (loggedIn) { %>
+              <li class="nav-item btnSignUp">
+                <a class="img-fluid" href="./Profile"
+                  ><img
+                    src="./Images/profile/profile-user-purple.png"
+                    style="width: 36px"
+                /></a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
               </li>
@@ -261,6 +268,14 @@
               </li>
 
               <% if (loggedIn) { %>
+                <li class="nav-item btnSignUp">
+                  <a class="img-fluid" href="./Profile"
+                    ><img
+                      src="./Images/profile/profile-user-purple.png"
+                      style="width: 36px"
+                  /></a>
+                </li>
+
                 <li class="nav-item">
                   <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
                 </li>

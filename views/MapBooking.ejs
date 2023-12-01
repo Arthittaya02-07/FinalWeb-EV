@@ -119,23 +119,27 @@
           </div>
           <div>
             <ul class="navbar-nav ml-auto mt-2 d-flex justify-content-end align-items-center">
-              <li class="nav-item btnSignUp">
-                <a class="img-fluid" href="/Profile"
-                  ><img src="./Images/profile/profile-user-purple.png" style="width: 36px; "></a
-                >
-              </li>
-              <li class="nav-item btnSignUp">
-                <a class="nav-link font-weight-bold" href="/SignUp"
-                  >Sign Up</a
-                >
-              </li>
-              <li class="nav-item btnLogin">
-                <a
-                  class="nav-link font-weight-bold text-right"
-                  href="/LogIn"
-                  >Log In</a
-                >
-              </li>
+              <% if (loggedIn) { %>
+                <li class="nav-item btnSignUp">
+                  <a class="img-fluid" href="./Profile"
+                    ><img
+                      src="./Images/profile/profile-user-purple.png"
+                      style="width: 36px"
+                  /></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
+                </li>
+                <% } %>
+                
+              <% if (!loggedIn) {%>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
+                </li>
+              <% } %>
             </ul>
           </div>
         </nav>
@@ -283,17 +287,27 @@
               <li class="nav-item hoverelement">
                 <a class="nav-link font-weight-bold" href="#footer">Contact</a>
               </li>
-              
-              <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/SignUp"
-                  >Sign Up</a
-                >
-              </li>
-              <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/LogIn"
-                  >Log In</a
-                >
-              </li>
+
+              <% if (loggedIn) { %>
+                <li class="nav-item btnSignUp">
+                  <a class="img-fluid" href="./Profile"
+                    ><img
+                      src="./Images/profile/profile-user-purple.png"
+                      style="width: 36px"
+                  /></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
+                </li>
+                <% } %>
+                <% if (!loggedIn) {%>
+                  <li class="nav-item">
+                    <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
+                  </li>
+                <% } %>
             </ul>
 
             <div class="" style="padding: 1rem">
