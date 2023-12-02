@@ -401,7 +401,7 @@ d::before {
 
 
 .maptext2 {
-  background-image: url('./Images/background Map.png');
+  /* background-image: url('./Images/backgroundMap.png'); */
   background-size: cover; /* หรือ 'contain' ตามที่คุณต้องการ */
   background-position: center;
   background-repeat: no-repeat;

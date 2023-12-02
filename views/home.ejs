@@ -314,21 +314,8 @@
       </div>
     </header>
 
-<<<<<<< HEAD
-    <!-- content -->
-    <!-- <div class="container-fluid">
-      <div class="row d-flex align-content-center" style="height: 500px">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <h1 class="display-2 text-center">Home Page</h1>
-        </div>
-      </div>
-    </div> -->
-
-=======
-    
->>>>>>> d402747fe06f88e49594f2896faf26d734e405d6
-    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+ 
+    <!-- <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
         <div class="col-md-6 px-0">
           <h1 class="display-4 fst-italic">
             Home page
@@ -337,13 +324,14 @@
             <a href="#" class="text-white fw-bold">Welcome, <%= UserData.name %> </a>
           </p>
         </div>
-      </div>
+      </div> -->
     <!-- content -->
     
     <div class="container-fluid backgroundAnimation">
       
       <img src="./Images/homepara/Home_0001_moon.png" id="moon">
-      <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;">WELCOME, USER</h1>
+      <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;"><a href="#" style="color: #763DF2">Welcome, <%= UserData.name %> </a>
+      </h1>
      <img src="./Images/homepara/Home_0006_star.png" id="star">
      <img src="./Images/homepara/Home_0007_cloud.png" id="cloud">
      <img src="./Images/homepara/Home_0005_mountain.png" id="mountain">
@@ -423,13 +411,16 @@
   </div>
   
 
-    <div data-aos="fade-up" data-aos-duration="1000">
-      <div class="container-fluid carvideo mt-5 px-0">
-        <video width="100%" height="auto" autoplay muted loop controls>
+  <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid carvideo mt-5 px-0">
+      <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" width="100%" height="auto" autoplay muted loop controls>
           <source src="./Images/Volvo S90 Recharge_ Luxury is not a thing.mp4" type="video/mp4">
         </video>
       </div>
     </div>
+  </div>
+  
     
     
     <div id="carModelContainer" data-aos="fade-up" data-aos-duration="1000">
@@ -474,94 +465,143 @@
     </div>
 
 
-    <div class="go-to-top">
-      <a href="#">
-        <i class="fas fa-arrow-up"></i>
-      </a>
-    </div>
+    <div data-aos="fade-up" data-aos-duration="1000">  
+      <div class="container-fluid mt-5">
+        <div class="row g-0 position-relative justify-content-center ">
+          <!-- รูปทางซ้าย -->
+          <div class="col-md-3 m-auto text-center">
+            <img src="./Images/save-the-earth.png" class="img-fluid wave" style="width: 300px;">
+          </div>
+          <img src="./Images/radius.png" style="position: absolute; left: 60%;  width: 40%; z-index: -1;">
   
- <!-- footer -->
- <div class="container-fluid" id="footer">
-  <h3 class="text-center pt-5" style="color: #683fbf">
-    Want to partner with us?
-  </h3>
-  <p class="text-center"></p>
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-6 col-md-3">
-      <a
-        class="btn btn-block btn-outline-primary"
-        style="border-radius: 20px; width: 100%; margin: 0 auto"
-        href="./Joinus"
-      >
-        Get Started
-      </a>
+          <div class="col-md-6">
+            <!-- แถวที่ 1 -->
+            <div class="row counting mb-3">
+              <div class="col-md-6 p-md-2 mb-3 wave-text">  
+                <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">709.6</div>
+                <h4 style="color: grey; font-weight: 500;">Reduce carbon emissions by 709.6 tons</h4>
+              </div>
+          
+              <div class="col-md-6 p-md-2 mb-3 wave-text">  
+                <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">20.6</div>
+                <h4 style="color: grey; font-weight: 500;">Cut greenhouse gas emissions by using electric cars</h4>
+              </div>
+            </div>
+           <hr style="color: #683fbf" />
+            <!-- แถวที่ 2 -->
+            <div class="row counting">
+              <div class="col-md-6 p-md-2 mb-3 wave-text">  
+                <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">7.1</div>
+                <h4 style="color: grey; font-weight: 500;">Electric cars have driven a total of 7.1 million km</h4>
+              </div>
+          
+              <div class="col-md-6 p-md-2 mb-3 wave-text">  
+                <div class="number" style="font-size: 50px; color: #763DF2; font-weight: bold;">20</div>
+                <h4 style="color: grey; font-weight: 500;">EVs emit 20% less heat and can make cities cooler</h4>
+              </div>
+            </div>
+          </div>
+    </div> 
+  
+  
+  
+  
+      <div class="go-to-top">
+        <a href="#">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    
+  
+  
+    <!-- footer -->
+    <div class="container-fluid" id="footer">
+      <h3 class="text-center pt-5" style="color: #683fbf">
+        Want to partner with us?
+      </h3>
+      <p class="text-center"></p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3">
+          <a
+            class="btn btn-block btn-outline-primary"
+            style="border-radius: 20px; width: 100%; margin: 0 auto"
+            href="./Joinus"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        <div class="container-fluid text-center mt-5">
+          <ul
+            class="list-unstyled social-media-icons text-center mt-2 list-unstyled"
+          >
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-media-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled footer-menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="./Joinus">Join Us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+
+          <hr style="color: #683fbf" />
+          <p class="copyright" style="color: #683fbf; font-size: 12px">
+            &copy; 2023 <a href="./home">Ev Charge Hub.</a> All rights
+            reserved.
+          </p>
+        </div>
+      </footer>
     </div>
-  </div>
 
-  <footer>
-    <div class="container-fluid text-center mt-5">
-      <ul
-        class="list-unstyled social-media-icons text-center mt-2 list-unstyled"
-      >
-        <li class="list-inline-item">
-          <a href="#" class="social-media-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="#" class="social-media-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="#" class="social-media-icon">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-
-      <ul class="list-unstyled footer-menu">
-        <li><a href="/home">Home</a></li>
-        <li><a href="./Joinus">Join Us</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms Of Use</a></li>
-        <li><a href="#">Help</a></li>
-      </ul>
-
-      <hr style="color: #683fbf" />
-      <p class="copyright" style="color: #683fbf; font-size: 12px">
-        &copy; 2023 <a href="./home">Ev Charge Hub.</a> All rights
-        reserved.
-      </p>
-    </div>
-  </footer>
-</div>
-
-
-     <!-- dark mood -->
+    <!-- dark mood -->
     <script>
       $(document).ready(function () {
+        // กำหนดค่าเริ่มต้น
+        $("body").addClass("bg-black");
+        $("nav").removeClass("navbar-dark");
+        $("header").removeClass("navbar-dark");
+        $(".custom-control-label").removeClass("text-white");
+        $("h1").removeClass("text-white");
+        $("h5").removeClass("text-white");
+        $(".input-group-append .btn i").css("color", "#763DF2");
+
         $(".selector-button").change(function () {
+          // สลับสีพื้นหลัง
           $("body").toggleClass("bg-black");
           // ไปทำเป็นtransparent
-          $("nav").toggleClass("navbar-dark ");
+          $("nav").toggleClass("navbar-dark");
           $("header").toggleClass("navbar-dark");
-
-          $(".custom-control-label").toggleClass("text-white");
-          $("h1").toggleClass("text-white");
-          $("h5").toggleClass("text-white");
 
           if ($(this).is(":checked")) {
             // เปลี่ยนสีไอคอนเป็นสีขาว
-            $(".input-group-append .btn i").css("color", "#fff");
+            $(".input-group-append .btn i").css("color", "#763DF2");
           } else {
             // เปลี่ยนสีไอคอนเป็นสีปกติ
-            $(".input-group-append .btn i").css("color", "#000");
+            $(".input-group-append .btn i").css("color", "#763DF2");
           }
         });
       });
     </script>
 
+    <!-- effect navbar -->
     <script>
       $(document).ready(function () {
         $("#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4").click(function () {
@@ -570,6 +610,169 @@
       });
     </script>
 
-    <!-- dark mood -->
+    <!-- nav bar sticky -->
+    <script>
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          document.querySelector(".sticky-top").style.top = "-120px";
+        } else {
+          document.querySelector(".sticky-top").style.top = "0";
+        }
+      };
+    </script>
+
+    <!-- change pic -->
+    <script src="./js/style.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+    <!-- animation -->
+ <script>
+  let moon = document.getElementById("moon")
+  let city1 = document.getElementById("city1")
+  let city2 = document.getElementById("city2")
+  let car = document.getElementById("car")
+  let welcome = document.getElementById("welcome")
+  window.addEventListener("scroll", function () {
+    let value = window.scrollY;
+    city1.style.marginLeft = value * 0.25 + "px";
+    city2.style.marginLeft = value * -0.5 + 'px';
+    moon.style.marginLeft = value * 1.5 + "px";
+    car.style.marginLeft = value * -1 + "px";
+    welcome.style.marginTop = value * 0.5 + "px";
+  });
+</script>
+<!-- counting -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+ $(".number").counterUp({delay:10,time:1000});
+  });
+</script>
+
+<script>
+  $(".image-container img").mouseenter(function () {
+  $(this).parent().addClass("hover");
+});
+
+$(".image-container img").mouseleave(function () {
+  $(this).parent().removeClass("hover");
+});
+
+</script>
+
+<!-- typing -->
+<script>
+  const text = document.querySelector('.typing-text');
+
+// make a words array
+const words = [
+  "HOW TO USE --->",
+];
+
+// start typing effect
+setTyper(text, words);
+function setTyper(element, words) {
+
+  const LETTER_TYPE_DELAY = 75;
+  const WORD_STAY_DELAY = 2000;
+
+  const DIRECTION_FORWARDS = 0;
+  const DIRECTION_BACKWARDS = 1;
+
+  var direction = DIRECTION_FORWARDS;
+  var wordIndex = 0;
+  var letterIndex = 0;
+
+  var wordTypeInterval;
+
+  startTyping();
+
+  function startTyping() {
+    wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
+  }
+
+  function typeLetter() {
+    const word = words[wordIndex];
+
+    if (direction == DIRECTION_FORWARDS) {
+      letterIndex++;
+
+      if (letterIndex == word.length) {
+        direction = DIRECTION_BACKWARDS;
+        clearInterval(wordTypeInterval);
+        setTimeout(startTyping, WORD_STAY_DELAY);
+      }
+
+    } else if (direction == DIRECTION_BACKWARDS) {
+      letterIndex--;
+
+      if (letterIndex == 0) {
+        nextWord();
+      }
+    }
+
+    const textToType = word.substring(0, letterIndex);
+
+    element.textContent = textToType;
+  }
+
+  function nextWord() {
+
+    letterIndex = 0;
+    direction = DIRECTION_FORWARDS;
+    wordIndex++;
+
+    if (wordIndex == words.length) {
+      wordIndex = 0;
+    }
+
+  }
+}
+
+</script>
+
+<!-- car card -->
+<script>
+  var count = 0;
+const carmodelAnimations = () => {
+	// workaround for browsers throttling setInterval/setTimeout on inactive tabs
+	// https://stackoverflow.com/questions/5927284/how-can-i-make-setinterval-also-work-when-a-tab-is-inactive-in-chrome
+  	setTimeout(carmodelAnimations, 6000);
+    const carmodelImage = document.querySelectorAll('.slider__image'),
+          carmodelDetails = document.querySelectorAll('.slider__details'),
+          carmodelDetailsBackground = document.querySelector('.slider__background--front'),
+          carmodelNavDot = document.querySelectorAll('.slider__navigation--dot');
+    for (var i=0; i<carmodelImage.length; i++) {
+        carmodelImage[i].setAttribute('style', 'opacity: 0');
+    }
+    for (var i=0; i<carmodelDetails.length; i++) {
+        carmodelDetails[i].setAttribute('style', 'opacity: 0');
+    }
+    for (i=0; i<carmodelNavDot.length; i++) {
+		carmodelNavDot[i].setAttribute('style', 'background: #ed1319');
+	} 
+    count++;
+    if (count > carmodelImage.length) {
+        count = 1;
+   	}
+    carmodelImage[count-1].setAttribute('style', 'opacity: 1');
+    carmodelImage[count-1].style.animation = 'slideInLeft 6s infinite';
+    carmodelDetails[count-1].setAttribute('style', 'opacity: 1');
+    carmodelDetails[count-1].style.animation = 'fadeIn .5s forwards, fadeOut .5s 4.5s forwards';
+    carmodelDetailsBackground.style.animation = 'slideInAndOut 6s infinite forwards';
+    carmodelNavDot[count-1].setAttribute('style', 'background: #FEDC17');
+}
+carmodelAnimations();
+</script>
+
   </body>
 </html>
