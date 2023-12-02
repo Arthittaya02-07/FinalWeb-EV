@@ -405,7 +405,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form  action="/user/Edit" method="POST">
                     <div class="row">
                       <div class="col-md-8">
                         <div class="form-group">
@@ -417,6 +417,7 @@
                             value="<%= UserData.name %>"
                             class="form-control"
                             id="inputFirstName"
+                            name="name"
                             placeholder="your firstname"
                           />
                         </div>
@@ -429,6 +430,7 @@
                             value="<%= UserData.surname %>"
                             class="form-control"
                             id="inputLastName"
+                            name="surname"
                             placeholder="your lastname"
                           />
                         </div>
@@ -466,8 +468,8 @@
                     <h5 class="card-title mb-0">Password</h5>
                   </div>
                 </div>
-                <form class="m-3">
-                  <div class="form-group">
+                <form class="m-3"  action="/user/EditPassword" method="POST">
+                  <!-- <div class="form-group">
                     <label for="inputPasswordCurrent" class="form-label">Current password</label>
                     <input
                       type="password"
@@ -477,22 +479,24 @@
                       placeholder="Enter current password"
                     />
                     <small><a href="#" style="color: #E15CF2;">Forgot your password?</a></small>
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <label for="inputPasswordNew" class="form-label">New password</label>
                     <input
                       type="password"
                       class="form-control"
                       id="inputPasswordNew"
+                      name="password"
                       placeholder="Enter new password"
                     />
                   </div>
                   <div class="form-group">
-                    <label for="inputPasswordNew2" class="form-label">Verify password</label>
+                    <label for="inputPasswordNew2"  class="form-label">Verify password</label>
                     <input
                       type="password"
                       class="form-control"
                       id="inputPasswordNew2"
+                      name="confirm_password"
                       placeholder="Re-enter new password"
                     />
                   </div>

@@ -7,7 +7,7 @@ module.exports = (req, res) => {
   
     req.body.verificationToken = uuidv4();
     // console.log('uuidv4 >',uuidv4());
-    // console.log('req.body >',req.body);
+    console.log('req.body >',req.body);
     
     User.create(req.body).then(() => {
         console.log("User Registered Successfully!")
@@ -35,7 +35,7 @@ module.exports = (req, res) => {
         });
 
         // เมื่อแสดงข้อความเสร็จจะกลับไปหน้าแรก redirect
-        res.redirect('/home')
+        res.redirect('/LogIn')
     }).catch((error) => {
         // แสดงข้อมูล error บน terminal เรา
         // console.log(error.errors)

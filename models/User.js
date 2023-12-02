@@ -6,18 +6,11 @@ const UserSchema = new Schema ({
     email : {
         type: String,
         required : [true, 'Please Enter Your Email'],
-        // match: [/^\S+@\S+\.\S+$/, 'Invalid email format'],
+        
     },
     password: {
         type: String,
         required : [true, 'Please Enter Your password'],
-        // validate: {
-        //     validator: function(value) {
-        //         const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
-        //         return regex.test(value);
-        //     },
-        //     message: 'Password must be at least 8 characters long and include at least one digit, one lowercase, one uppercase, and one special character.',
-        // },
     },
     repassword: {
         type: String,

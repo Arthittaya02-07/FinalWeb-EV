@@ -28,6 +28,10 @@ const verifyController = require('./controllers/verifyController')
 const joinUsController = require('./controllers/joinUsController')
 const profileController = require('./controllers/profileController')
 const mapController = require('./controllers/mapController')
+const updateController = require('./controllers/updateController')
+const passwordUpdateController = require('./controllers/passwordUpdate')
+
+
 // const passportController = require('./controllers/passportController')
 
 // fetch('https://api.example.com/data')
@@ -58,6 +62,15 @@ app.use("*", (req, res, next) => {
     loggedIn = req.session.userId 
     next()
 })
+
+// app.use(function(req,res){
+//     res.status(404).render('views/404.html');
+// });
+
+// app.use(function (req, res) {
+//     res.status(404).send('error');
+// });
+
 app.set('view engine','ejs')
 
 app.get('/',indexController)
@@ -66,6 +79,8 @@ app.get('/LogIn',redirectIfAuth,loginController)
 app.get('/SignUp',redirectIfAuth,signUpController)
 app.post('/user/SignUp',redirectIfAuth,storeUserController)
 app.post('/user/LogIn',redirectIfAuth,loginUserController)
+app.post('/user/Edit',updateController)
+app.post('/user/EditPassword',passwordUpdateController)
 app.get('/LogOut', logOutController)
 app.get('/verify/:key', verifyController)
 app.get('/Joinus', joinUsController)
@@ -73,9 +88,36 @@ app.get('/Profile',profileController)
 app.get('/MapBooking',authMiddleware,mapController)
 app.use('/auth',redirectIfAuth,require('./auth'))
 app.post('/user/Joinus',authMiddleware,partnerController)
+app.use((req, res, next) => { 
+    res.status(404).send( 
+    `
+    <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>404 Not Found - EV Charge Hub</title>
+            
+            <style>
+                body {
+                    margin: 0;
+                    overflow: hidden; /* Add this to prevent scrollbars */
+                }
 
-
-
+                iframe {
+                    width: 100%;
+                    height: 108vh; /* Use viewport height for full-screen height */
+                    border: 0; /* Remove iframe border */
+                }
+            </style>
+        </head>
+        <body>
+            <iframe src='https://my.spline.design/fullelectriccopy-3722956a217bde1911a22cf6843e3a2a/' frameborder='0'></iframe>
+        </body>
+        </html>
+`
+    ) 
+}) 
 
 
 app.listen( 4000, () => {
