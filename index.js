@@ -69,7 +69,7 @@ app.get('/LogOut', logOutController)
 app.get('/verify/:key', verifyController)
 app.get('/Joinus', joinUsController)
 app.get('/Profile',profileController)
-app.get('/Map',authMiddleware,mapController)
+app.get('/MapBooking',authMiddleware,mapController)
 app.use('/auth',redirectIfAuth,require('./auth'))
 
 

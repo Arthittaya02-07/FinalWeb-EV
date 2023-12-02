@@ -381,6 +381,33 @@ $('#bookinghistory').on('shown.bs.tab', function (e) {
 
 
 
+  document.addEventListener("DOMContentLoaded", function () {
+    // ค้นหาลิงก์ "How to" และ "Car Model"
+    const howToLink = document.querySelector('a[href="#howToContainer"]');
+    const carModelLink = document.querySelector('a[href="#carModelContainer"]');
+
+    // หากมีการคลิกที่ลิงก์ "How to"
+    howToLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.querySelector('#howToContainer').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // หากมีการคลิกที่ลิงก์ "Car Model"
+    carModelLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.querySelector('#carModelContainer').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+
+
+
+
+
+
+
+
+
 
 
 

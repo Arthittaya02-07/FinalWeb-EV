@@ -41,15 +41,6 @@
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-      
-      .textfind {
-      font-weight: bold;
-      font-size: 80px;
-      text-align: center;
-      background: linear-gradient(45deg, #E15CF2, #763DF2, #9CF2F2, #683FBF, #1E2D59);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
     </style>
   </head>
 
@@ -107,15 +98,13 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="./Howto.html">How to</a>
+                    <a class="dropdown-item" href="#howToContainer">How to</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./Carmodel.html"
-                      >Car Model</a
-                    >
+                    <a class="dropdown-item" href="#carModelContainer">Car Model</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./MapBooking.html"
+                    <a class="dropdown-item" href="./MapBooking"
                       >Map & Booking</a
                     >
                   </li>
@@ -131,6 +120,7 @@
             <ul
               class="navbar-nav ml-auto mt-2 d-flex justify-content-end align-items-center"
             >
+            <% if (loggedIn) { %>
               <li class="nav-item btnSignUp">
                 <a class="img-fluid" href="./Profile"
                   ><img
@@ -138,20 +128,20 @@
                     style="width: 36px"
                 /></a>
               </li>
-              <li class="nav-item btnSignUp">
-                <a 
-                class="nav-link font-weight-bold" 
-                href="/SignUp"
-                  >Sign Up</a
-                >
+              <li class="nav-item">
+                <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
               </li>
-              <li class="nav-item btnLogin">
-                <a
-                  class="nav-link font-weight-bold text-right"
-                  href="/LogIn"
-                  >Log In</a
-                >
-              </li>
+              <% } %>
+
+              <% if (!loggedIn) {%>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
+                </li>
+              <% } %>
             </ul>
           </div>
         </nav>
@@ -270,7 +260,7 @@
                 >
               </li>
               <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="./Joinus.html"
+                <a class="nav-link font-weight-bold" href="./Joinus"
                   >Join Us</a
                 >
               </li>
@@ -287,15 +277,13 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="./Howto.html">How to</a>
+                    <a class="dropdown-item" href="#howToContainer">How to</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./Carmodel.html"
-                      >Car Model</a
-                    >
+                    <a class="dropdown-item" href="#carModelContainer">Car Model</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./MapBooking.html"
+                    <a class="dropdown-item" href="./MapBooking"
                       >Map & Booking</a
                     >
                   </li>
@@ -306,16 +294,28 @@
                 <a class="nav-link font-weight-bold" href="#footer">Contact</a>
               </li>
 
-              <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="./SignUp.html"
-                  >Sign Up</a
-                >
-              </li>
-              <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="./LogIn.html"
-                  >Log In</a
-                >
-              </li>
+              <% if (loggedIn) { %>
+                <li class="nav-item btnSignUp">
+                  <a class="img-fluid" href="./Profile"
+                    ><img
+                      src="./Images/profile/profile-user-purple.png"
+                      style="width: 36px"
+                  /></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
+                </li>
+                <% } %>
+  
+                <% if (!loggedIn) {%>
+                  <li class="nav-item">
+                    <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
+                  </li>
+                <% } %>
             </ul>
 
             <div class="" style="padding: 1rem">
@@ -336,7 +336,6 @@
     <div class="container-fluid backgroundAnimation">
       
       <img src="./Images/homepara/Home_0001_moon.png" id="moon">
-      <h1 id="welcome" style="color: #763DF2; font-weight: bold; font-size: 90px; text-align: center;">WELCOME, USER</h1>
      <img src="./Images/homepara/Home_0006_star.png" id="star">
      <img src="./Images/homepara/Home_0007_cloud.png" id="cloud">
      <img src="./Images/homepara/Home_0005_mountain.png" id="mountain">
@@ -346,40 +345,139 @@
      <img src="./Images/homepara/Home_0000_car.png" id="car" >
     </div>
 
-    <h1 class="textfind" style="font-weight: bold; font-size: 80px; text-align: center;">Find a charging station near you</h1>
-
     <div data-aos="fade-up" data-aos-duration="1000">
-    <div class="container-fluid maphome">
-      <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
+      <div class="container-fluid introev m-auto mt-5 ">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">What does Evolt do?</h1>
+            <h3 style="font-weight: 500; color: grey;">We are a full service provider of electric vehicle charging stations</h3>
+          </div>
+          <div class="col-md-3">
+            <div class="image-container align-items-center mx-auto mt-5">
+              <img src="./Images/EV Image/3407.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+              <div class="image-container align-items-center mx-auto ">
+              <img src="./Images/EV Image/3d-electric-car-with-charged-battery.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            <div class="image-container align-items-center mx-auto">
+              <img src="./Images/EV Image/full-shot-man-charging-electric-car.jpg" class="img-fluid mb-3" alt="EV Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <img src="./Images/radius.png" style="position: absolute; right: 65%; top: 1000px; width: 60%; z-index: -1;">
+
+    
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <div class="row justify-content-center mt-5 mx-auto">
+        <div class="col-md-4 justify-content-center position-relative">
+        </div>
+      <div class="col-md-6  text-md-end mb-3">
+        <h1 style="font-weight: bold; font-size: 65px; color: #763DF2;">Find a charging station near you</h1>
+      </div>
     </div>
 
-      <div data-aos="fade-up" data-aos-duration="1000">
-      <div class="container-fluid carvideo">
-        <iframe
-          width="1454"
-          height="400"
-          src="https://www.youtube.com/embed/bE_guNKXxlM?si=YQi7mh-vr_hDd6X7&controls=0&start=7&autoplay=1&mute=1" 
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-          style="border: none;"
-        ></iframe>
-      </div>
-      </div>
-      
-      
+    <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid maphome px-0">
+      <iframe src="https://my.atlist.com/map/a29a00e0-e597-4bbf-8128-37de4c27c3c5?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="600px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>    </div>
+    </div>
+  </div>
 
+  <div id="howToContainer" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid HowTo justify-content-center mt-5">
+      <div class="row justify-content-center">
+        <!-- คอลัมน์แรก -->
+        <div class="col-md-6 mb-3">
+          <div class="card">
+            <div class="card-body d-flex justify-content-center">
+              <div class="col-md-6 mb-3 ">
+                <!-- รูป qrcodevideo -->
+                <img src="./Images/EV Image/qrcodevideo.png" class="img-fluid" style="width: 100%; border-radius: 20px;">
+              </div>
+              <div class="col-md-6 mb-3">
+                <!-- h1 -->
+                <h1 class="typing-text" style="font-weight: bold; color: #763DF2; font-size: 80px;"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- คอลัมน์ที่สอง -->
+        <div class="col-md-6 mb-3">
+          <img src="./Images/EV Image/ar.jpg" class="img-fluid" style="border-radius: 30px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
-    <div data-aos="fade-up" data-aos-duration="1000">   
-    <div class="container-fluid">
-      <div class="row g-0 position-relative justify-content-center mt-5">
+  <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid carvideo mt-5 px-0">
+      <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" width="100%" height="auto" autoplay muted loop controls>
+          <source src="./Images/Volvo S90 Recharge_ Luxury is not a thing.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  
+    
+    
+    <div id="carModelContainer" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container-fluid carmodel mt-5 mb-3">
+        <div class="carmodel--left">
+        <div class="text">
+          <div class="carmodel__title">Car<br />Model</div>
+            </div>
+        </div>
+        <div class="carmodel--right">
+        <div class="slider">
+          <div class="slider__background--back"></div>
+          <div class="slider__background--front"></div>
+          <div class="slider__details">
+            <div class="slider__details--name">EX30</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#1" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+                <div class="slider__details">
+            <div class="slider__details--name">C40 Recharge</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#2" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+          <div class="slider__details">
+            <div class="slider__details--name">XC40 Recharge</div>
+            <div class="slider__details--price">Support</div>
+            <a href="#3" class="slider__details--link"><svg class="svg-icon_right" viewBox="0 0 20 20"><path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path></svg></a>
+                </div>
+                <div class="slider__gallery">
+            <img class="slider__image img-fluid" src="./Images/carmodel/electric-car-ex-30-callout-4x3-removebg-preview.png">
+            <img class="slider__image img-fluid" src="./Images/carmodel/featurecarc401v-removebg-preview.png">
+                    <img class="slider__image img-fluid" src="./Images/carmodel/my23_xc40-bev_skw034_profile_bev1_1920x1440-removebg-preview.png">
+                </div>
+          <!-- <ul class="slider__navigation">
+            <li class="slider__navigation--dot"></li>
+            <li class="slider__navigation--dot"></li>
+            <li class="slider__navigation--dot"></li>
+                </ul> -->
+            </div>
+      </div>
+    </div>
+    </div>
+
+    
+    <div data-aos="fade-up" data-aos-duration="1000">  
+    <div class="container-fluid mt-5">
+      <div class="row g-0 position-relative justify-content-center ">
         <!-- รูปทางซ้าย -->
         <div class="col-md-3 m-auto text-center">
           <img src="./Images/save-the-earth.png" class="img-fluid wave" style="width: 300px;">
         </div>
-    
+        <img src="./Images/radius.png" style="position: absolute; left: 60%;  width: 40%; z-index: -1;">
+
         <div class="col-md-6">
           <!-- แถวที่ 1 -->
           <div class="row counting mb-3">
@@ -393,7 +491,7 @@
               <h4 style="color: grey; font-weight: 500;">Cut greenhouse gas emissions by using electric cars</h4>
             </div>
           </div>
-         
+         <hr style="color: #683fbf" />
           <!-- แถวที่ 2 -->
           <div class="row counting">
             <div class="col-md-6 p-md-2 mb-3 wave-text">  
@@ -460,8 +558,8 @@
           </ul>
 
           <ul class="list-unstyled footer-menu">
-            <li><a href="./home">Home</a></li>
-            <li><a href="#">Join Us</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="./Joinus">Join Us</a></li>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Terms Of Use</a></li>
             <li><a href="#">Help</a></li>
@@ -561,6 +659,122 @@
   $(document).ready(function(){
  $(".number").counterUp({delay:10,time:1000});
   });
+</script>
+
+<script>
+  $(".image-container img").mouseenter(function () {
+  $(this).parent().addClass("hover");
+});
+
+$(".image-container img").mouseleave(function () {
+  $(this).parent().removeClass("hover");
+});
+
+</script>
+
+<!-- typing -->
+<script>
+  const text = document.querySelector('.typing-text');
+
+// make a words array
+const words = [
+  "HOW TO USE --->",
+];
+
+// start typing effect
+setTyper(text, words);
+function setTyper(element, words) {
+
+  const LETTER_TYPE_DELAY = 75;
+  const WORD_STAY_DELAY = 2000;
+
+  const DIRECTION_FORWARDS = 0;
+  const DIRECTION_BACKWARDS = 1;
+
+  var direction = DIRECTION_FORWARDS;
+  var wordIndex = 0;
+  var letterIndex = 0;
+
+  var wordTypeInterval;
+
+  startTyping();
+
+  function startTyping() {
+    wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
+  }
+
+  function typeLetter() {
+    const word = words[wordIndex];
+
+    if (direction == DIRECTION_FORWARDS) {
+      letterIndex++;
+
+      if (letterIndex == word.length) {
+        direction = DIRECTION_BACKWARDS;
+        clearInterval(wordTypeInterval);
+        setTimeout(startTyping, WORD_STAY_DELAY);
+      }
+
+    } else if (direction == DIRECTION_BACKWARDS) {
+      letterIndex--;
+
+      if (letterIndex == 0) {
+        nextWord();
+      }
+    }
+
+    const textToType = word.substring(0, letterIndex);
+
+    element.textContent = textToType;
+  }
+
+  function nextWord() {
+
+    letterIndex = 0;
+    direction = DIRECTION_FORWARDS;
+    wordIndex++;
+
+    if (wordIndex == words.length) {
+      wordIndex = 0;
+    }
+
+  }
+}
+
+</script>
+
+<!-- car card -->
+<script>
+  var count = 0;
+const carmodelAnimations = () => {
+	// workaround for browsers throttling setInterval/setTimeout on inactive tabs
+	// https://stackoverflow.com/questions/5927284/how-can-i-make-setinterval-also-work-when-a-tab-is-inactive-in-chrome
+  	setTimeout(carmodelAnimations, 6000);
+    const carmodelImage = document.querySelectorAll('.slider__image'),
+          carmodelDetails = document.querySelectorAll('.slider__details'),
+          carmodelDetailsBackground = document.querySelector('.slider__background--front'),
+          carmodelNavDot = document.querySelectorAll('.slider__navigation--dot');
+    for (var i=0; i<carmodelImage.length; i++) {
+        carmodelImage[i].setAttribute('style', 'opacity: 0');
+    }
+    for (var i=0; i<carmodelDetails.length; i++) {
+        carmodelDetails[i].setAttribute('style', 'opacity: 0');
+    }
+    for (i=0; i<carmodelNavDot.length; i++) {
+		carmodelNavDot[i].setAttribute('style', 'background: #ed1319');
+	} 
+    count++;
+    if (count > carmodelImage.length) {
+        count = 1;
+   	}
+    carmodelImage[count-1].setAttribute('style', 'opacity: 1');
+    carmodelImage[count-1].style.animation = 'slideInLeft 6s infinite';
+    carmodelDetails[count-1].setAttribute('style', 'opacity: 1');
+    carmodelDetails[count-1].style.animation = 'fadeIn .5s forwards, fadeOut .5s 4.5s forwards';
+    carmodelDetailsBackground.style.animation = 'slideInAndOut 6s infinite forwards';
+    carmodelNavDot[count-1].setAttribute('style', 'background: #FEDC17');
+}
+carmodelAnimations();
 </script>
 
   </body>
