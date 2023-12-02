@@ -274,16 +274,27 @@
                 <a class="nav-link font-weight-bold" href="#footer">Contact</a>
               </li>
 
-              <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="SignUp"
-                  >Sign Up</a
-                >
-              </li>
-              <li class="nav-item hoverelement">
-                <a class="nav-link font-weight-bold" href="/LogIn"
-                  >Log In</a
-                >
-              </li>
+              <% if (loggedIn) { %>
+                <li class="nav-item btnSignUp">
+                  <a class="img-fluid" href="./Profile"
+                    ><img
+                      src="./Images/profile/profile-user-purple.png"
+                      style="width: 36px"
+                  /></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn font-weight-bold text-danger" href="/LogOut">Log Out</a>
+                </li>
+                <% } %>
+
+                <% if (!loggedIn) {%>
+                  <li class="nav-item">
+                    <a class="nav-link btn font-weight-bold" href="/LogIn">Log In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn font-weight-bold" href="/SignUp">Sign Up</a>
+                  </li>
+                <% } %>
             </ul>
 
             <div class="" style="padding: 1rem">
@@ -312,7 +323,7 @@
         </h1>
         <div class="card">
           <div class="card-body">
-            <form action="/Joinus" method="POST">
+            <form action="/user/Joinus" method="POST">
               <div class="mb-3 ps-5" style="width: 90%">
                 <h4>สถานที่</h4>
                 <label for="region">ภาค</label>
@@ -479,7 +490,7 @@
               </div>
             </form>
 
-            <form action="/Joinus" method="POST" class="row g-3 pt-3">
+            <form action="/user/Joinus" method="POST" class="row g-3 pt-3">
               <div class="col-lg-6 col-sm-12 ps-5">
                 <h4>ประเภทลานจอดรถ</h4>
                 <div class="form-check form-check-inline">
@@ -523,7 +534,7 @@
               </div>
             </form>
 
-            <form action="/Joinus" method="POST" class="row g-3 pt-3">
+            <form action="/user/Joinus" method="POST" class="row g-3 pt-3">
               <div class="col-lg-6 col-sm-12 ps-5">
                 <h4>จำนวนช่องจอดรถยนต์</h4>
                 <div class="form-check">

@@ -57,24 +57,6 @@ UserSchema.pre('save',function(next) {
     })
  })
 
-//  app.post('/update-profile', async (req, res) => {
-//     const { firstName, lastName } = req.body;
-  
-//     try {
-//       // ค้นหาข้อมูลผู้ใช้ (ให้แก้ไขตามต้องการ)
-//       const user = await User.findOneAndUpdate(
-//         { /* ตั้งเงื่อนไขการค้นหา */ },
-//         { $set: { firstName, lastName } },
-//         { new: true }
-//       );
-  
-//       res.json({ success: true, user });
-//     } catch (error) {
-//       console.error('เกิดข้อผิดพลาด:', error);
-//       res.status(500).json({ success: false, error: 'Internal Server Error' });
-//     }
-//   });
-
 const User = mongoose.model('User',UserSchema)
 module.exports = User
 

@@ -10,9 +10,7 @@ const passport = require('passport')
 
 //MongoDB Connect
 // mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/?retryWrites=true&w=majority')
-mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/')
-
-
+mongoose.connect('mongodb+srv://admin:1234@cluster0.q6r432v.mongodb.net/?retryWrites=true&w=majority')
 
 global.loggedIn = null
 
@@ -71,7 +69,7 @@ app.get('/verify/:key', verifyController)
 app.get('/Joinus',authMiddleware, joinUsController)
 app.get('/Profile',profileController)
 app.get('/Mapbooking',mapController)
-// app.post('/Joinus',authMiddleware,partnerController)
+app.post('/user/Joinus',authMiddleware,partnerController)
 
 app.use('/auth',redirectIfAuth,require('./auth'))
 
