@@ -128,57 +128,57 @@
         
                           <div class="row">
                             <div class="col-md-12 mb-1 pb-2">
-                              <div class="form-outline">
-                                <label class="form-label" for="emailAddress"
-                                >Email</label
-                              >
-                                <input
-                                  type="email"
-                                  name="email"
-                                  value="<%= email %>"
-                                  id="emailAddress"
-                                  class="form-control form-control-md"
-                                  placeholder="example@gmail.com"
-                                />
-                              
-                              </div>
+                                <div class="form-outline">
+                                    <label class="form-label" for="emailAddress">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value="<%= email %>"
+                                        id="emailAddress"
+                                        class="form-control form-control-md"
+                                        placeholder="example@gmail.com"
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                        title="Enter a valid email address"
+                                        required
+                                    />
+                                </div>
                             </div>
-                          </div>
+                        </div>
+                        
         
-                          <div class="row">
-                            <div class="col-md-6 mb-1 pb-2">
+                        <div class="row">
+                          <div class="col-md-6 mb-1 pb-2">
                               <div class="form-outline">
-                                <label class="form-label" for="password"
-                                >Password</label
-                              >
-                                <input
-                                  type="password"
-                                  name="password"
-                                  value="<%= password %>"
-                                  id="password"
-                                  class="form-control form-control-md"
-                                  placeholder="Enter password"
-                                />
-                               
+                                  <label class="form-label" for="password">Password</label>
+                                  <input
+                                      type="password"
+                                      name="password"
+                                      value="<%= password %>"
+                                      id="password"
+                                      class="form-control form-control-md"
+                                      placeholder="Enter password"
+                                      required
+                                  />
                               </div>
-                            </div>
-                            <div class="col-md-6 mb-1 pb-2">
-                              <div class="form-outline">
-                                <label class="form-label" for="confirmPassword"
-                                >Repeat Password</label
-                              >
-                                <input
-                                  type="password"
-                                  id="confirmPassword"
-                                  name="repassword"
-                                  value="<%= repassword %>"
-                                  class="form-control form-control-md"
-                                  placeholder="Enter Repassword"
-                                />
-                             
-                              </div>
-                            </div>
                           </div>
+                          <div class="col-md-6 mb-1 pb-2">
+                              <div class="form-outline">
+                                  <label class="form-label" for="confirmPassword">Repeat Password</label>
+                                  <input
+                                      type="password"
+                                      id="confirmPassword"
+                                      name="repassword"
+                                      value="<%= repassword %>"
+                                      class="form-control form-control-md"
+                                      placeholder="Enter Repassword"
+                                      pattern=".{6,}" 
+                                      title="Passwords must be at least 6 characters long"
+                                      required
+                                  />
+                              </div>
+                          </div>
+                      </div>
+                      
         
                           <div class="row">
                             <div class="col-md-6 mb-1 pb-2">
@@ -198,21 +198,22 @@
                             </div>
                             <div class="col-md-6 mb-1 pb-2">
                               <div class="form-outline">
-                                <label class="form-label" for="phoneNumber"
-                                  >Phone Number</label
-                                >
-                                <input
-                                  type="tel"
-                                  name="phone"
-                                  value="<%= phone %>"
-                                  id="phoneNumber"
-                                  class="form-control form-control-md"
-                                  placeholder="123-456-7890"
-                                />
-                                
+                                  <label class="form-label" for="phoneNumber">Phone Number</label>
+                                  <input
+                                      type="tel"
+                                      name="phone"
+                                      value="<%= phone %>"
+                                      id="phoneNumber"
+                                      class="form-control form-control-md"
+                                      placeholder="+66 123456789"
+                                      pattern="\+66 \d{9}" 
+                                      title="Enter a valid Thai phone number starting with +66 and followed by 9 digits"
+                                      required
+                                  />
                               </div>
-                            </div>
                           </div>
+                          
+                          
                           <div class="row">
                             <div class="col-md-6 mb-1 pb-2">
                               <div class="form-outline">
@@ -376,5 +377,33 @@
         </div>
 
     <script src="/js/style.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          var passwordField = document.getElementById("password");
+          var confirmPasswordField = document.getElementById("confirmPassword");
+          var signUpButton = document.querySelector('button[type="submit"]');
+  
+          function validatePassword() {
+              if (passwordField.value !== confirmPasswordField.value) {
+                  confirmPasswordField.setCustomValidity("Passwords do not match");
+              } else {
+                  confirmPasswordField.setCustomValidity("");
+              }
+          }
+  
+          passwordField.addEventListener("change", validatePassword);
+          confirmPasswordField.addEventListener("input", validatePassword);
+  
+          // Optional: Disable the submit button if passwords don't match
+          signUpButton.addEventListener("click", function (event) {
+              if (passwordField.value !== confirmPasswordField.value) {
+                  event.preventDefault();
+                  // You can display an additional message or take other actions here
+                  alert("Passwords do not match. Please check again.");
+              }
+          });
+      });
+  </script>
+  
   </body>
 </html>

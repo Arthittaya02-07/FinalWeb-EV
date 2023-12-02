@@ -40,6 +40,7 @@ require('./controllers/passportController')(passport)
 //Middleware
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
+const partnerController = require('./controllers/partnerController')
 const authgoogle = require('./auth')
 
 //passport middleware
@@ -71,6 +72,9 @@ app.get('/Joinus', joinUsController)
 app.get('/Profile',profileController)
 app.get('/MapBooking',authMiddleware,mapController)
 app.use('/auth',redirectIfAuth,require('./auth'))
+app.post('/user/Joinus',authMiddleware,partnerController)
+
+
 
 
 
