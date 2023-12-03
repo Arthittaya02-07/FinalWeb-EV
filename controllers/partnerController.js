@@ -43,7 +43,8 @@ module.exports = async (req, res) => {
                 typeCarpark: parkingType,
                 parkingSpaces: parkingSpace,
         }).then(() => {
-            res.json({ success: true, message: 'บันทึกข้อมูลเรียบร้อย' });
+            // res.json({ success: true, message: 'บันทึกข้อมูลเรียบร้อย' });
+            return res.redirect('/Joinus')
         }).catch((error) => {
             return res.redirect('/Joinus')
         })
