@@ -25,17 +25,29 @@ module.exports = async (req, res) => {
     });
 
     try {
-        const partner = new Partner({
-            userId,
-            zone: region, // หากมีการแปลง region, province, district เป็น zone และอื่นๆ ตามต้องการ
-            province:province,
-            typeBusiness: businessType,
-            typeCarpark: parkingType,
-            parkingSpaces: parkingSpace
-        });
+        console.log('AAAAA');
+        // const partner = new Partner({
+        //     userId: userId,
+        //     zone: region, // หากมีการแปลง region, province, district เป็น zone และอื่นๆ ตามต้องการ
+        //     province: province,
+        //     typeBusiness: businessType,
+        //     typeCarpark: parkingType,
+        //     parkingSpaces: parkingSpace,
+        // });
 
-        await partner.save();
-        res.json({ success: true, message: 'บันทึกข้อมูลเรียบร้อย' });
+        Partner.create({
+                userId: userId,
+                zone: region, // หากมีการแปลง region, province, district เป็น zone และอื่นๆ ตามต้องการ
+                province: province,
+                typeBusiness: businessType,
+                typeCarpark: parkingType,
+                parkingSpaces: parkingSpace,
+        }).then(() => {
+            // res.json({ success: true, message: 'บันทึกข้อมูลเรียบร้อย' });
+            return res.redirect('/Joinus')
+        }).catch((error) => {
+            return res.redirect('/Joinus')
+        })
     } catch (error) {
         console.error('เกิดข้อผิดพลาด:', error);
         res.status(500).json({ success: false, error: 'Internal Server Error' });

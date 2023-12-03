@@ -341,11 +341,13 @@
         </h1>
         <div class="card">
           <div class="card-body">
-            <form action="#">
+            <form action="/user/Joinus" method="POST">
+
+            <div>
               <div class="mb-3 ps-5" style="width: 90%">
                 <h4>สถานที่</h4>
                 <label for="region">ภาค</label>
-                <select class="form-control" id="region">
+                <select class="form-control" id="region" name="region">
                   <option value="">เลือกภาค</option>
                   <option value="ภาคเหนือ">ภาคเหนือ</option>
                   <option value="ภาคตะวันออกเฉียงเหนือ">
@@ -359,19 +361,19 @@
               </div>
               <div class="mb-3 ps-5" style="width: 90%">
                 <label for="province">จังหวัด</label>
-                <select class="form-control" id="province">
+                <select class="form-control" id="province" name="province">
                   <option value="">เลือกจังหวัด</option>
                 </select>
               </div>
               <div class="mb-3 ps-5" style="width: 90%">
                 <label for="district">เขต/อำเภอ</label>
-                <select class="form-control" id="district">
+                <select class="form-control" id="district" name="district">
                   <option value="">เลือกเขต/อำเภอ</option>
                 </select>
               </div>
-            </form>
+            </div>
 
-            <form class="row g-3 pt-3">
+            <div class="row g-3 pt-3">
               <div class="col-lg-6 col-sm-12 ps-5">
                 <h4>ประเภทธุรกิจ</h4>
                 <div class="form-check">
@@ -505,9 +507,9 @@
                   />
                 </div>
               </div>
-            </form>
+            </div>
 
-            <form class="row g-3 pt-3">
+            <div class="row g-3 pt-3">
               <div class="col-lg-6 col-sm-12 ps-5">
                 <h4>ประเภทลานจอดรถ</h4>
                 <div class="form-check form-check-inline">
@@ -549,8 +551,9 @@
                   >
                 </div>
               </div>
-            </form>
-            <form class="row g-3 pt-3">
+            </div>
+
+            <div class="row g-3 pt-3">
               <div class="col-lg-6 col-sm-12 ps-5">
                 <h4>จำนวนช่องจอดรถยนต์</h4>
                 <div class="form-check">
@@ -578,13 +581,16 @@
                   >
                 </div>
               </div>
-            </form>
+            </div>
 
             <div class="mt-4 pt-2 text-center">
               <button type="submit" class="btn btn-primary">
                 เข้าร่วมธุรกิจ
               </button>
             </div>
+
+          </form>
+
           </div>
         </div>
       </div>

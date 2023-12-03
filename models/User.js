@@ -10,7 +10,6 @@ const UserSchema = new Schema ({
     password: {
         type: String,
         required : [true, 'Please Enter Your password'],
-       
     },
     repassword: {
         type: String,
